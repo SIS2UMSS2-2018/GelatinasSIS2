@@ -5,6 +5,8 @@
  */
 package registrar;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Revollito
@@ -133,7 +135,13 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
-        // TODO add your handling code here:
+   String nombre = nombreUsuario.getText();
+   String contr1 = contraseña1.getText();     
+   String contr2 = contraseña2.getText();  
+    if (contr1.equals(contr2)){
+    //guardar 
+    JOptionPane.showMessageDialog(null, "Registro Exitoso");
+    }else JOptionPane.showMessageDialog(null, "Error no se pudo registrar");
     }//GEN-LAST:event_registrarActionPerformed
 
     private void contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseña1ActionPerformed
