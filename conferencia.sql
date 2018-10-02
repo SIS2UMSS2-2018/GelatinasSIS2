@@ -4,6 +4,7 @@ CREATE TABLE asistentes (
   ci_asis VARCHAR(15) NOT NULL,
   ocupacion_asis VARCHAR(20) NOT NULL,
   apellido_asis VARCHAR(30) NOT NULL,
+  correo_asis VARCHAR(30) NOT NULL,
   PRIMARY KEY(id_asistente)
 );
 
@@ -21,6 +22,7 @@ CREATE TABLE expositores (
   nombre_expo VARCHAR(15) NOT NULL,
   apellido_expo VARCHAR(30) NOT NULL,
   historial VARCHAR(60) NOT NULL,
+  nro_contacto INTEGER UNSIGNED NOT NULL,
   PRIMARY KEY(id_expo)
 );
 
