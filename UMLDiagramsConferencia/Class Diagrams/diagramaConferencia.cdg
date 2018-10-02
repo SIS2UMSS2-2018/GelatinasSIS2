@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="diagramaConferencia">
+  <ClassDiagramComponents>
+    <Class name="VentanaPrincipal" package="vista" visibility="public" xPosition="282.0" yPosition="95.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Resultado" package="modelo" visibility="public" xPosition="158.0" yPosition="226.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Operacion" package="modelo" visibility="public" xPosition="422.0" yPosition="256.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Conexion" package="modelo" visibility="public" xPosition="532.0" yPosition="69.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Main" package="controlador" visibility="public" xPosition="279.0" yPosition="410.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
