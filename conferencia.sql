@@ -3,7 +3,6 @@ CREATE TABLE asistentes (
   nombre_asis VARCHAR(15) NOT NULL,
   ci_asis VARCHAR(15) NOT NULL,
   ocupacion_asis VARCHAR(20) NOT NULL,
-  asistido CHAR NOT NULL,
   apellido_asis VARCHAR(30) NOT NULL,
   PRIMARY KEY(id_asistente)
 );
@@ -11,6 +10,7 @@ CREATE TABLE asistentes (
 CREATE TABLE asisten_grupo (
   asistentes_id_asistente INTEGER UNSIGNED NOT NULL,
   grupos_id_grupo INTEGER UNSIGNED NOT NULL,
+  asistido CHAR(1) NOT NULL,
   PRIMARY KEY(asistentes_id_asistente, grupos_id_grupo),
   INDEX asisten_grupo_FKIndex1(asistentes_id_asistente),
   INDEX asisten_grupo_FKIndex2(grupos_id_grupo)
