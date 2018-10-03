@@ -2,31 +2,97 @@
 
 <ClassDiagram name="diagramaConferencia">
   <ClassDiagramComponents>
-    <Class name="VentanaPrincipal" package="vista" visibility="public" xPosition="282.0" yPosition="95.0">
+    <Class name="Conexion" package="modelo" visibility="public" xPosition="54.0" yPosition="46.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Resultado" package="modelo" visibility="public" xPosition="158.0" yPosition="226.0">
+    <Class name="LogInIU" package="" visibility="public" xPosition="628.0" yPosition="12.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Operacion" package="modelo" visibility="public" xPosition="422.0" yPosition="256.0">
+    <Class name="SecretariaIU" package="" visibility="public" xPosition="421.0" yPosition="145.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generarInformes" returnType="void" visibility="public"/>
+        <Method name="registrarAsistente" returnType="void" visibility="public"/>
+        <Method name="eliminarAsistente" returnType="void" visibility="public"/>
+        <Method name="cupos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ControladorIU" package="" visibility="public" xPosition="691.0" yPosition="145.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Conexion" package="modelo" visibility="public" xPosition="532.0" yPosition="69.0">
+    <Class name="OrganizadorIU" package="" visibility="public" xPosition="937.0" yPosition="126.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="InformeSecretariaIU" package="" visibility="public" xPosition="54.0" yPosition="254.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="expositorContacto" returnType="void" visibility="public"/>
+        <Method name="historialExpositor" returnType="void" visibility="public"/>
+        <Method name="datosInscritos" returnType="void" visibility="public"/>
+        <Method name="gruposHorasExpoExcel" returnType="void" visibility="public"/>
+        <Method name="actividadesPorGrupo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EliminarAsistenteIU" package="" visibility="public" xPosition="490.0" yPosition="366.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="Main" package="controlador" visibility="public" xPosition="279.0" yPosition="410.0">
+    <Class name="RegistrarAsistenteIU" package="" visibility="public" xPosition="284.0" yPosition="366.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="registroExitoso" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RegistrarAsistenciaIU" package="" visibility="public" xPosition="733.0" yPosition="366.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="mensajeExito" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GrupoIU" package="" visibility="public" xPosition="972.0" yPosition="347.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="generarTabla" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CuposGruposIU" package="" visibility="public" xPosition="352.0" yPosition="513.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RegistrarExpositorIU" package="" visibility="public" xPosition="166.0" yPosition="145.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
   </ClassDiagramComponents>
-  <ClassDiagramRelations/>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="LogInIU" target="SecretariaIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="LogInIU" target="OrganizadorIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretariaIU" target="RegistrarAsistenteIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretariaIU" target="InformeSecretariaIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretariaIU" target="RegistrarExpositorIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="LogInIU" target="ControladorIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="ControladorIU" target="RegistrarAsistenciaIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretariaIU" target="CuposGruposIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="SecretariaIU" target="EliminarAsistenteIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="OrganizadorIU" target="GrupoIU" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
 </ClassDiagram>
