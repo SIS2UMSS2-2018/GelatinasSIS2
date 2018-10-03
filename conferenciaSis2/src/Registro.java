@@ -1,25 +1,24 @@
+import baseDatos.Conexion;
+import baseDatos.Consultas;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-public class Conexion {
+public class Registro {
 
     Connection conect = null;
     Statement sentencia;
-
-    public Connection conexion() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conect = DriverManager.getConnection("jdbc:mysql://localhost/conferencia", "root", "");
-            sentencia=(com.mysql.jdbc.Statement) conect.createStatement();
+    Conexion con;
+    public Registro() {
+        con=new Conexion();
+        if(con.isConectado()){
+            conect=con.getConexion();
             JOptionPane.showMessageDialog(null, "Conexion exitosa");
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("error de conexion");
-            JOptionPane.showMessageDialog(null, "Error de conexion " + e);
+        }else{
+            JOptionPane.showMessageDialog(null, "Error de conexion ");
         }
-        return conect;
     }
 
     public boolean consulta(String consultaSQL) {
@@ -29,7 +28,7 @@ public class Conexion {
             int n = pst.executeUpdate();
             res=(n>0);
         } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
             res=false;
         }
         return res;
@@ -37,9 +36,11 @@ public class Conexion {
 
     public ArrayList<Integer> grupo() throws SQLException {
         ArrayList<Integer> respuesta = new ArrayList<>();
-        ResultSet rs = sentencia.executeQuery("SELECT DISTINCT grupos_id_grupo  FROM asisten_grupo");
+        Consultas consulta= new Consultas(conect);
+        //ResultSet rs = sentencia.executeQuery("SELECT DISTINCT grupos_id_grupo  FROM asisten_grupo");
+        ResultSet rs = consulta.query();
         while (rs.next()) {
-            respuesta.add(Integer.parseInt(rs.getString("grupos_id_grupo")));
+            respuesta.add(Integer.parseInt(rs.getString("id_grupo")));
         }
         rs.close();
         return respuesta;

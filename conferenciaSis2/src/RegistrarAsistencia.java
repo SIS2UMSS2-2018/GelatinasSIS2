@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  * @author Revollito
  */
 public class RegistrarAsistencia extends javax.swing.JFrame {
- Conexion conex = new Conexion();
+ Registro conex = new Registro();
     /**
      * Creates new form RegistrarAsistencia
      */
     public RegistrarAsistencia(){
         initComponents();
         this.setLocationRelativeTo(null);
-        conex.conexion();
+        //conex.conexion();
         ArrayList<Integer> array;
      try {
          array = conex.grupo();
