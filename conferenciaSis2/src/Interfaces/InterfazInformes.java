@@ -1,5 +1,8 @@
+package Interfaces;
+
 
 import baseDatos.Conexion;
+import baseDatos.Consultas;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -27,6 +30,7 @@ public class InterfazInformes extends javax.swing.JFrame {
     /**
      * Creates new form InterfazInformes
      */
+    private Consultas cs;
     public InterfazInformes() {
         initComponents();
     }
@@ -96,12 +100,12 @@ public class InterfazInformes extends javax.swing.JFrame {
         try {
             stm = co.createStatement();
         } catch (SQLException ex) {
-            Logger.getLogger(InformeSecretariaIU.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InterfazInformes.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
         try {
-             rs = stm.executeQuery("select a.nombre_asis, a.apellido_asis, a.ocupacion_asis, g.id_grupo, g.temas_id_tema from asistentes a, grupos g, asisten_grupo ag where g.id_grupo= ag.grupos_id_grupo and a.ci_asistente = ag.asistentes_ci_asistente");
+            rs = cs.estudiantesGrupos();
              int grupo = rs.getInt(4); 
              try {
                 FileWriter w = new FileWriter(textoAModificar);
@@ -115,10 +119,10 @@ public class InterfazInformes extends javax.swing.JFrame {
                     grupo = rs.getInt(4);
                 }
             } catch (IOException ex) {
-                Logger.getLogger(InformeSecretariaIU.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InterfazInformes.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(InformeSecretariaIU.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InterfazInformes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
