@@ -23,7 +23,7 @@ CREATE TABLE expositores (
   apellido_expo VARCHAR(30) NOT NULL,
   historial VARCHAR(60) NOT NULL,
   nro_contacto INTEGER UNSIGNED NOT NULL,
-  actividades VARCHAR NOT NULL,
+  actividades TEXT NULL,
   PRIMARY KEY(id_expo)
 );
 
