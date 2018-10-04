@@ -133,8 +133,8 @@ public class Consultas {
     }
     
     // Inserta un expositor a la tabla de expositores
-    public void insertarExpositor(int id_expo, String nombre_expo, String apellido_expo, String historial, int nro_contacto){
-        String values = "(" + Integer.toString(id_expo) + ',' + "'"+nombre_expo+"'" + ',' + "'"+apellido_expo+"'" + ',' + "'"+historial+"'" + ',' + Integer.toString(nro_contacto);
+    public void insertarExpositor(int id_expo, String nombre_expo, String apellido_expo, String historial, int nro_contacto, String actividades){
+        String values = "(" + Integer.toString(id_expo) + ',' + "'"+nombre_expo+"'" + ',' + "'"+apellido_expo+"'" + ',' + "'"+historial+"'" + ',' + Integer.toString(nro_contacto) + ',' + "'"+actividades+"'";
         String query = "INSERT INTO expositores VALUES " + values;
         try{
             sentencia.executeUpdate(query);
