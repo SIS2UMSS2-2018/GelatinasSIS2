@@ -162,7 +162,7 @@ public class Consultas {
     {
         ResultSet res;
         try {
-            res = sentencia.executeQuery("SELECT nombre_expo and apellido_expo FROM expositores");
+            res = sentencia.executeQuery("SELECT nombre_expo and apellido_expo FROM expositores ORDER BY nombre_expo ASC, apellido_expo ASC");
         }
         catch (SQLException ex){
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
