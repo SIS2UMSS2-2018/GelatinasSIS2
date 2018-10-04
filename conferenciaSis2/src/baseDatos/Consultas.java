@@ -156,4 +156,18 @@ public class Consultas {
         }
         return true;
     }
+    
+    // Obtener apellido y nombre de expositores
+    public ResultSet obtenerNombreApellidoDeExpositores()
+    {
+        ResultSet res;
+        try {
+            res = sentencia.executeQuery("SELECT nombre_expo and apellido_expo FROM expositores");
+        }
+        catch (SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res = null;
+        }
+        return res;
+    }
 }
