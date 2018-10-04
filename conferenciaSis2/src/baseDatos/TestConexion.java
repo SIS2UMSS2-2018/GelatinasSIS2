@@ -13,5 +13,7 @@ public class TestConexion {
     public static void main(String[] args) {
         Conexion c= new Conexion();
         System.out.println(c.isConectado());
+        Consultas co= new Consultas(c.getConexion());
+        System.out.println(co.cancelarInscripcion(123, 1));
     }
 }
