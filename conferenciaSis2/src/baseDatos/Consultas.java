@@ -131,4 +131,29 @@ public class Consultas {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    // Inserta un expositor a la tabla de expositores
+    public void insertarExpositor(int id_expo, String nombre_expo, String apellido_expo, String historial, int nro_contacto){
+        String values = "(" + Integer.toString(id_expo) + ',' + "'"+nombre_expo+"'" + ',' + "'"+apellido_expo+"'" + ',' + "'"+historial+"'" + ',' + Integer.toString(nro_contacto);
+        String query = "INSERT INTO expositores VALUES " + values;
+        try{
+            sentencia.executeUpdate(query);
+        }
+        catch(SQLException ex)
+        {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    // Valida la existencia de un expositor
+    public boolean validarExpositor(String nombre_expo, String apellido_expo){
+        ResultSet res;
+        try {
+            res = sentencia.executeQuery("select nro_Contacto from expositores where nombre_expo ='"+nombre_expo+"' and apellido_expo ='"+apellido_expo+"'");
+            if (res.last() == false) return false;
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
 }
