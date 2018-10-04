@@ -102,7 +102,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
-        // TODO add your handling code here:
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     /**
