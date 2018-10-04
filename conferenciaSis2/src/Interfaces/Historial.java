@@ -58,20 +58,21 @@ Conexion con;
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_expo = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSalir.setBackground(new java.awt.Color(0, 0, 51));
-        jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButtonSalir.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setText("Salir");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, 30));
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, -1, 30));
 
         tabla_expo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,19 +96,21 @@ Conexion con;
         tabla_expo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane2.setViewportView(tabla_expo);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 490, 160));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 480, 260));
 
-        jButton1.setText("IMPRIMIR ");
+        jButton1.setBackground(new java.awt.Color(102, 102, 255));
+        jButton1.setText("Imprimir");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 420));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setText("jLabel1");
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,7 +163,7 @@ dispose();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonSalir;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabla_expo;
     // End of variables declaration//GEN-END:variables

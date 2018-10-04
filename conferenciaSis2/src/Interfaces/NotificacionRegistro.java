@@ -9,12 +9,12 @@ package Interfaces;
  *
  * @author Edgar Ruben B
  */
-public class InterfazNotificacionRegistro extends javax.swing.JFrame {
+public class NotificacionRegistro extends javax.swing.JFrame {
 
     /**
      * Creates new form InterfazNotificacionRegistro
      */
-    public InterfazNotificacionRegistro() {
+    public NotificacionRegistro() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -53,8 +53,8 @@ public class InterfazNotificacionRegistro extends javax.swing.JFrame {
         jLabel1.setText("SE REGISTRÓ EXITOSAMENTE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 520, -1));
 
-        jLabelBien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/hands-ok-2-icon.png"))); // NOI18N
-        getContentPane().add(jLabelBien, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 430, 240));
+        jLabelBien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Ok.png"))); // NOI18N
+        getContentPane().add(jLabelBien, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 430, 240));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 270));
@@ -83,20 +83,21 @@ public class InterfazNotificacionRegistro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazNotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazNotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazNotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazNotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotificacionRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazNotificacionRegistro().setVisible(true);
+                new NotificacionRegistro().setVisible(true);
             }
         });
     }

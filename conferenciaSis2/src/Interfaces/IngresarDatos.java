@@ -9,12 +9,12 @@ package Interfaces;
  *
  * @author Edgar Ruben B
  */
-public class InterfazIngresarDatos extends javax.swing.JFrame {
+public class IngresarDatos extends javax.swing.JFrame {
 
     /**
      * Creates new form InterfazIngresarDatos
      */
-    public InterfazIngresarDatos() {
+    public IngresarDatos() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -113,7 +113,7 @@ public class InterfazIngresarDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonIngresarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarDatosActionPerformed
-        InterfazNotificacionRegistro interfaz = new InterfazNotificacionRegistro();
+        NotificacionRegistro interfaz = new NotificacionRegistro();
         interfaz.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonIngresarDatosActionPerformed
@@ -135,20 +135,21 @@ public class InterfazIngresarDatos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazIngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazIngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazIngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazIngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IngresarDatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfazIngresarDatos().setVisible(true);
+                new IngresarDatos().setVisible(true);
             }
         });
     }

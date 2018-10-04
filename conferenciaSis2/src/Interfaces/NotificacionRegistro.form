@@ -67,12 +67,12 @@
     <Component class="javax.swing.JLabel" name="jLabelBien">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ImagenesInterfaces/hands-ok-2-icon.png"/>
+          <Image iconType="3" name="/ImagenesInterfaces/Ok.png"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="20" width="430" height="240"/>
+          <AbsoluteConstraints x="160" y="20" width="430" height="240"/>
         </Constraint>
       </Constraints>
     </Component>
