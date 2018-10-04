@@ -98,7 +98,17 @@ public class Consultas {
         
         return res;
     }
-    
+    //Devuelve el contacto del expositor
+    public ResultSet contactoExpositor(String nombre, String apellido){
+            ResultSet res;
+            try {
+                res = sentencia.executeQuery("select nro_Contacto from expositores where nombre_expo ='"+nombre+"' and apellido_expo ='"+apellido+"'");
+            } catch (SQLException ex) {
+                Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+                res=null;
+            }   
+            return res;
+    }
     // Inserta una tupla a la tabla de asistentes
     public void insertarAsistente(int ci_asistente, String nombre_asis, String apellido_asis, String ocupacion_asis, String correo_asis){
         String values = "(" + Integer.toString(ci_asistente) + ',' + "'"+apellido_asis+"'" + ',' + "'"+ocupacion_asis+"'" + ',' + "'"+correo_asis+"'" + ")";
@@ -111,7 +121,7 @@ public class Consultas {
         }
     }
     
-    // Reduce en 1 los cupos de un grupo dado su id
+    // Reduce en 1 los cupos de un grupo dado su id 
     public void reducirCupo(int id_grupo){
         String query = "UPDATE grupos SET cupos_dispo = cupos_dispo - 1 WHERE id_grupo = " + Integer.toString(id_grupo);
         try{
