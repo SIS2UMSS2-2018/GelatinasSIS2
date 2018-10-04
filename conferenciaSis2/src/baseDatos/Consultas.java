@@ -86,6 +86,18 @@ public class Consultas {
         }
         return res;
     }
+    //devuelve los datos de los estudiantes por grupo y tema
+    public ResultSet estudiantesGrupos(){
+        ResultSet res;
+        try {
+                res = sentencia.executeQuery("select a.nombre_asis, a.apellido_asis, a.ocupacion_asis, g.id_grupo, g.temas_id_tema from asistentes a, grupos g, asisten_grupo ag where g.id_grupo= ag.grupos_id_grupo and a.ci_asistente = ag.asistentes_ci_asistente");
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res=null;
+        }
+        
+        return res;
+    }
     
     // Inserta una tupla a la tabla de asistentes
     public void insertarAsistente(int ci_asistente, String nombre_asis, String apellido_asis, String ocupacion_asis, String correo_asis){
