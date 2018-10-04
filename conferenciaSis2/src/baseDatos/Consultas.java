@@ -170,4 +170,37 @@ public class Consultas {
         }
         return res;
     }
+    
+    //devuelve id de grupo y cantidad de grupo 
+    //variables de ResultSet id,cupo
+    public ResultSet obtenerCantGrupo(){
+        ResultSet res;
+        try {
+            String query="select id_grupo as id,cupos_dispo as cupo from grupos";
+            res = sentencia.executeQuery(query);
+            
+        }
+        catch (SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res = null;
+        }
+        return res;
+    }
+    //devuelve el id del grupo y la cantidad de inscritos
+    //variables ResultSet num,cant
+    public ResultSet cantInscritosGrupo(){
+        ResultSet res;
+        try {
+            String query="SELECT grupos_id_grupo as num, COUNT(*) as cant\n" +
+                         "FROM inscripcion\n" +
+                         "GROUP BY grupos_id_grupo";
+            res = sentencia.executeQuery(query);
+            
+        }
+        catch (SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res = null;
+        }
+        return res;
+    }
 }
