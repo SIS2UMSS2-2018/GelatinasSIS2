@@ -203,4 +203,23 @@ public class Consultas {
         }
         return res;
     }
+    //devuelve las actividades de los grupos
+    //bajo el sig formato:
+    //hora,grupo,nombre,apellido,tema,actividades
+    public ResultSet actividadesGrupo(){
+        ResultSet res;
+        try {
+            String query="SELECT hora , grupos_id_grupo as grupo, nombre_expo as nombre,apellido_expo as apellido, nombre_tema as tema, actividades\n" +
+                          "FROM cronograma C, expositores , temas T\n" +
+                          "WHERE C.expositores_id_expo=id_expo and T.expositores_id_expo=id_expo\n"           +
+                          "ORDER BY hora ASC";    
+            res = sentencia.executeQuery(query);
+            
+        }
+        catch (SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res = null;
+        }
+        return res;
+    }
 }

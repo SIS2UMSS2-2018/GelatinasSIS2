@@ -5,15 +5,18 @@
  */
 package baseDatos;
 
-import baseDatos.Conexion;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 /**
  *
  * @author sabo
  */
 public class TestConexion {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Conexion c= new Conexion();
         System.out.println(c.isConectado());
+        
     }
 }
