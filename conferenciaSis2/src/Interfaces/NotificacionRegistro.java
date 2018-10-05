@@ -53,10 +53,10 @@ public class NotificacionRegistro extends javax.swing.JFrame {
         jLabel1.setText("SE REGISTRÓ EXITOSAMENTE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 520, -1));
 
-        jLabelBien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Ok.png"))); // NOI18N
+        jLabelBien.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Ok.png")); // NOI18N
         getContentPane().add(jLabelBien, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 430, 240));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 270));
 
         pack();
