@@ -108,7 +108,7 @@ Conexion con;
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         jLabelFondo.setText("jLabel1");
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 420));
 
