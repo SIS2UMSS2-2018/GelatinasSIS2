@@ -45,6 +45,7 @@ public class InformacionGrupos extends javax.swing.JFrame {
         jButtonVolver.setBackground(new java.awt.Color(102, 102, 255));
         jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setText("Atrás");
+        jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverActionPerformed(evt);
@@ -55,6 +56,7 @@ public class InformacionGrupos extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Generar Informe");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         jLabelTexto.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
@@ -83,17 +85,20 @@ public class InformacionGrupos extends javax.swing.JFrame {
         getContentPane().add(jLabelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 70, -1));
 
         jLabelImagen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelImagen.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/lentes.png")); // NOI18N
-        getContentPane().add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 0, 720, 270));
+        jLabelImagen.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Lentes.png")
+        );
+        getContentPane().add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 0, 720, 280));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 270));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 280));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        System.exit(0);
+        ListaInformes interfaz = new ListaInformes();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     /**

@@ -52,6 +52,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jButtonIngresarDatos.setBackground(new java.awt.Color(102, 102, 255));
         jButtonIngresarDatos.setForeground(new java.awt.Color(255, 255, 255));
         jButtonIngresarDatos.setText("Ingresar Datos");
+        jButtonIngresarDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonIngresarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIngresarDatosActionPerformed(evt);
@@ -66,6 +67,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtras.setText("Atrás");
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtrasActionPerformed(evt);
@@ -92,8 +94,8 @@ public class IngresarDatos extends javax.swing.JFrame {
         jLabelActividad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelActividad.setText("ACTIVIDAD:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
-        //Supuesto Error
-        jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png")); // NOI18N
+
+        jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png"));
         getContentPane().add(jLabelImagenEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 20, 460, 480));
 
         jLabelRegistro.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -101,7 +103,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jLabelRegistro.setText("REGISTRO ASISTENTES");
         getContentPane().add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         jLabelFondo.setMaximumSize(new java.awt.Dimension(800, 600));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 1, -1, -1));
 
@@ -109,13 +111,15 @@ public class IngresarDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        System.exit(0);
+        InscripcionYCancelacion interfaz = new InscripcionYCancelacion();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonIngresarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarDatosActionPerformed
         NotificacionRegistro interfaz = new NotificacionRegistro();
         interfaz.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButtonIngresarDatosActionPerformed
 
     /**

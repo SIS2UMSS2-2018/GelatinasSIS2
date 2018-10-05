@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package Interfaces;
 
 import archivos.GenerarReporte;
 import baseDatos.Conexion;
-import java.awt.Image;
+//import java.awt.Image;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+//import javax.swing.Icon;
+//import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -34,7 +34,7 @@ Conexion con;
     public Historial() {
         con=new Conexion();
         initComponents();
-        llenarTablaExposi();
+        //llenarTablaExposi();
 /// ImageIcon icon = new ImageIcon(getClass().getResource("/src/ImagenesInterfaces/fondo.jpg"));
 
 //Icon icono = new ImageIcon(icon.getImage().getScaledInstance(fondoel.getWidth(), fondoel.getHeight(), Image.SCALE_DEFAULT));
@@ -61,12 +61,15 @@ Conexion con;
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonSalir.setBackground(new java.awt.Color(102, 102, 255));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setText("Salir");
+        jButtonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalirActionPerformed(evt);
@@ -99,6 +102,7 @@ Conexion con;
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 480, 260));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Imprimir");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,21 +112,21 @@ Conexion con;
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
-        jLabelFondo.setText("jLabel1");
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-dispose();
+        ListaInformes interfaz = new ListaInformes();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-   GenerarReporte g=new GenerarReporte();
-   g.reporte();
+        GenerarReporte g=new GenerarReporte();
+        g.reporte();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

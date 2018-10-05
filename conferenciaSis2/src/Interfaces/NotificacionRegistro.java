@@ -53,17 +53,19 @@ public class NotificacionRegistro extends javax.swing.JFrame {
         jLabel1.setText("SE REGISTRÓ EXITOSAMENTE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 520, -1));
 
-        jLabelBien.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Ok.png")); // NOI18N
+        jLabelBien.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Ok.png"));
         getContentPane().add(jLabelBien, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 430, 240));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        System.exit(0);
+        IngresarDatos interfaz = new IngresarDatos();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     /**

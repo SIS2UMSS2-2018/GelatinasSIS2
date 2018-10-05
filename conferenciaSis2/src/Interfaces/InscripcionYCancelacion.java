@@ -45,6 +45,11 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setText("Volver");
         jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, -1, -1));
 
         jButtonCancelar.setBackground(new java.awt.Color(102, 102, 255));
@@ -64,10 +69,15 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         jButtonCancelar1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar1.setText("Inscribir Asistente");
         jButtonCancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelar1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jLabelTriste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTriste.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/CaraTriste1.png")); // NOI18N
+        jLabelTriste.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/CaraTriste1.png"));
         jLabelTriste.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelTriste.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelTriste.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -86,7 +96,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         getContentPane().add(jLabelTriste, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 180, 210));
 
         jLabelFeliz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelFeliz.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Muchos.png")); // NOI18N
+        jLabelFeliz.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Muchos.png"));
         jLabelFeliz.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelFeliz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelFeliz.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -104,14 +114,16 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelFeliz, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 190, 210));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 275));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        // TODO add your handling code here:
+        CancelarInscripcion interfaz= new CancelarInscripcion();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jLabelFelizMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFelizMouseMoved
@@ -133,14 +145,26 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
     private void jLabelFelizMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFelizMouseClicked
         IngresarDatos id= new IngresarDatos();
         id.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jLabelFelizMouseClicked
 
     private void jLabelTristeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTristeMouseClicked
-        CancelarInscripcion ci= new CancelarInscripcion();
-        ci.setVisible(true);
-        this.setVisible(false);
+        CancelarInscripcion interfaz= new CancelarInscripcion();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabelTristeMouseClicked
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        Principal interfaz= new Principal();
+        interfaz.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jButtonCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelar1ActionPerformed
+        IngresarDatos id= new IngresarDatos();
+        id.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonCancelar1ActionPerformed
 
     /**
      * @param args the command line arguments

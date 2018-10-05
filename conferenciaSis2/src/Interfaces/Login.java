@@ -75,7 +75,7 @@ public class Login extends javax.swing.JFrame {
         jButtonCrearCuenta.setText("Crear Cuenta");
         getContentPane().add(jButtonCrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 120, 30));
 
-        jLabelImagenUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/User.png"))); // NOI18N
+        jLabelImagenUsuario.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/User.png"));
         getContentPane().add(jLabelImagenUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 310, 260));
 
         jLabelUsuario.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
 
         jLabelFondo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Fondo Azul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Fondo Azul.jpg"));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
 
         pack();
@@ -104,7 +104,7 @@ public class Login extends javax.swing.JFrame {
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
         Principal principal = new Principal();
         principal.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     /**

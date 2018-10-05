@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
-import sun.swing.SwingAccessor;
+//import sun.swing.SwingAccessor;
 
 /**
  *
@@ -61,6 +61,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
     
     public InformacionExpositores() {
         initComponents();
+        this.setLocationRelativeTo(null);
         con = new Consultas( (new Conexion()).getConexion() );
         llenarArrayListsConNombres();
         llenarJComboBox();
@@ -78,36 +79,39 @@ public class InformacionExpositores extends javax.swing.JFrame {
 
         jComboBoxNombresExpositores = new javax.swing.JComboBox<>();
         botonObtenerInformacion = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        getContentPane().add(jComboBoxNombresExpositores, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 210, 36));
 
         botonObtenerInformacion.setText("Info. Contacto");
+        botonObtenerInformacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonObtenerInformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonObtenerInformacionActionPerformed(evt);
             }
         });
+        getContentPane().add(botonObtenerInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 112, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jComboBoxNombresExpositores, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonObtenerInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxNombresExpositores, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonObtenerInformacion))
-                .addContainerGap(187, Short.MAX_VALUE))
-        );
+        jButton1.setBackground(new java.awt.Color(102, 102, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Atrás");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setText("jLabel1");
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 400, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +135,12 @@ public class InformacionExpositores extends javax.swing.JFrame {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botonObtenerInformacionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ListaInformes interfaz = new ListaInformes();
+        interfaz.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +179,8 @@ public class InformacionExpositores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonObtenerInformacion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxNombresExpositores;
+    private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }
