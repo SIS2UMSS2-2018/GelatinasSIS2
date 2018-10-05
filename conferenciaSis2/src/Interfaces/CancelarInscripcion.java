@@ -84,10 +84,10 @@ public class CancelarInscripcion extends javax.swing.JFrame {
         jLabelActividad.setText("Actividad:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src/ImagenesInterfaces/Triste1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Triste1.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, -130, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("src/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 275));
 
         pack();
