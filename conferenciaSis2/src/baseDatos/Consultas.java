@@ -176,7 +176,7 @@ public class Consultas {
     public ResultSet obtenerCantGrupo(){
         ResultSet res;
         try {
-            String query="select id_grupo as id,cupos_dispo as cupo from grupos";
+            String query="select id_grupo as id,cupos_dispo as cupo from grupos where cupos_dispo>0";
             res = sentencia.executeQuery(query);
             
         }
