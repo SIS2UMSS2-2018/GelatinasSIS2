@@ -67,7 +67,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         getContentPane().add(jButtonCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jLabelTriste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTriste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/CaraTriste1.png"))); // NOI18N
+        jLabelTriste.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/CaraTriste1.png")); // NOI18N
         jLabelTriste.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelTriste.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelTriste.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -86,7 +86,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         getContentPane().add(jLabelTriste, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 180, 210));
 
         jLabelFeliz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelFeliz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Muchos.png"))); // NOI18N
+        jLabelFeliz.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Muchos.png")); // NOI18N
         jLabelFeliz.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelFeliz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelFeliz.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -104,7 +104,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelFeliz, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 190, 210));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 275));
 
         pack();
