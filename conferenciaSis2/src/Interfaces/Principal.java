@@ -262,8 +262,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelImagen3MouseExited
 
     private void jLabelImagen4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen4MouseClicked
-        IngresarDatos juego= new IngresarDatos();
-        juego.setVisible(true);
+        InscripcionYCancelacion ic= new InscripcionYCancelacion();
+        ic.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabelImagen4MouseClicked
 

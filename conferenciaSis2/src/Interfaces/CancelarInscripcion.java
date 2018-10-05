@@ -102,7 +102,9 @@ public class CancelarInscripcion extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldActividadActionPerformed
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        // TODO add your handling code here:
+        InscripcionYCancelacion ic= new InscripcionYCancelacion();
+        ic.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     /**
