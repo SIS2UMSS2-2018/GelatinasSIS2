@@ -183,7 +183,7 @@ public class Principal extends javax.swing.JFrame {
         jLabelMusica.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/MusicalNotes32px.png")); // NOI18N
         getContentPane().add(jLabelMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 170, 40, 40));
 
-        jLabelInternet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Globe32px.png"))); // NOI18N
+        jLabelInternet.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Globe32px.png")); // NOI18N
         getContentPane().add(jLabelInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, 40, 40));
 
         jLabelCalculadora.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Calculator.png")); // NOI18N
