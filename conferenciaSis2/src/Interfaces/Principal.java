@@ -73,7 +73,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelTexto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 160, 20));
 
         jLabelImagen1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelImagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Idea.png"))); // NOI18N
+        jLabelImagen1.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Idea.png")); // NOI18N
         jLabelImagen1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelImagen1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelImagen1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -93,7 +93,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelImagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 150));
 
         jLabelImagen2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Handshake.png"))); // NOI18N
+        jLabelImagen2.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Handshake.png")); // NOI18N
         jLabelImagen2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelImagen2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelImagen2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,7 +113,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 190, 150));
 
         jLabelImagen3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelImagen3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Reloj.png"))); // NOI18N
+        jLabelImagen3.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Reloj.png")); // NOI18N
         jLabelImagen3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelImagen3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelImagen3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -133,7 +133,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelImagen3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 190, 150));
 
         jLabelImagen4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelImagen4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Agenda.png"))); // NOI18N
+        jLabelImagen4.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Agenda.png")); // NOI18N
         jLabelImagen4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelImagen4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelImagen4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -152,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelImagen4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 190, 150));
 
-        jLabelMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Expand32px.png"))); // NOI18N
+        jLabelMinimizar.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Expand32px.png")); // NOI18N
         jLabelMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -162,7 +162,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 40, 40));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 740, 20));
 
-        jLabelSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Multiply32px.png"))); // NOI18N
+        jLabelSalir.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Multiply32px.png")); // NOI18N
         jLabelSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -171,7 +171,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, 40, 40));
 
-        jLabelHerramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Icons32px.png"))); // NOI18N
+        jLabelHerramientas.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Icons32px.png"))); // NOI18N
         jLabelHerramientas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelHerramientas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -180,17 +180,17 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
 
-        jLabelMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/MusicalNotes32px.png"))); // NOI18N
+        jLabelMusica.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/MusicalNotes32px.png")); // NOI18N
         getContentPane().add(jLabelMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 170, 40, 40));
 
         jLabelInternet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Globe32px.png"))); // NOI18N
         getContentPane().add(jLabelInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, 40, 40));
 
-        jLabelCalculadora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Calculator.png"))); // NOI18N
+        jLabelCalculadora.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Calculator.png")); // NOI18N
         getContentPane().add(jLabelCalculadora, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 130, 40, 40));
 
         jLabelFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 520));
 
         pack();
