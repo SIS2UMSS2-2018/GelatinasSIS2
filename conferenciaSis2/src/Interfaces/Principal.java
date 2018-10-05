@@ -171,7 +171,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, 40, 40));
 
-        jLabelHerramientas.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Icons32px.png"))); // NOI18N
+        jLabelHerramientas.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Icons32px.png")); // NOI18N
         jLabelHerramientas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelHerramientas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
