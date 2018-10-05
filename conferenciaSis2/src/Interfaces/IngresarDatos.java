@@ -92,7 +92,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jLabelActividad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelActividad.setText("ACTIVIDAD:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
-
+        //Supuesto Error
         jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png")); // NOI18N
         getContentPane().add(jLabelImagenEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 20, 460, 480));
 
