@@ -93,7 +93,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jLabelActividad.setText("ACTIVIDAD:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
 
-        jLabelImagenEstudiante.setIcon("src/ImagenesInterfaces/Estudiante.png")); // NOI18N
+        jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png")); // NOI18N
         getContentPane().add(jLabelImagenEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 20, 460, 480));
 
         jLabelRegistro.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -101,7 +101,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jLabelRegistro.setText("REGISTRO ASISTENTES");
         getContentPane().add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        jLabelFondo.setIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg")); // NOI18N
         jLabelFondo.setMaximumSize(new java.awt.Dimension(800, 600));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 1, -1, -1));
 
