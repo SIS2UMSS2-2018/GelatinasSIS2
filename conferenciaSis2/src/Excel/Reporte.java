@@ -1,5 +1,6 @@
 package Excel;
 import baseDatos.Conexion;
+import baseDatos.Consultas;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
@@ -95,9 +96,11 @@ public class Reporte {
                 celdaEncabezado.setCellValue(cabecera[i]);
             }
             Conexion con = new Conexion();
-            PreparedStatement ps;
-            ResultSet rs;
             Connection conn = con.getConexion();
+            Consultas consulta = new Consultas(conn);
+            PreparedStatement ps;
+            ResultSet rs = consulta.reporteGrupos();
+            
 
             int numFilaDatos = 6;
             Font fuenteDatos = book.createFont();
@@ -113,13 +116,6 @@ public class Reporte {
             datosEstilo.setBorderLeft(BorderStyle.THIN);
             datosEstilo.setBorderRight(BorderStyle.THIN);
             datosEstilo.setBorderBottom(BorderStyle.THIN);
-            /**
-            "SELECT hora, grupos_id_grupo, nombre_expo, apellido_expo, nombre_tema "
-                    + "FROM cronograma, expositores, temas "
-                    + "WHERE id_expo = id_expo and id_expo = id_temas"
-                    **/
-            ps = (PreparedStatement) conn.prepareStatement("SELECT hora, grupos_id_grupo, nombre_expo, apellido_expo, nombre_tema FROM cronograma, expositores, temas WHERE id_expo = id_expo and id_expo = id_temas");
-            rs = (ResultSet) ps.executeQuery();
             int numCol = 5;
             
             while (rs.next()) {
