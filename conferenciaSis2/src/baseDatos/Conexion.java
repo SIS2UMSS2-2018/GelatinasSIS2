@@ -15,7 +15,7 @@ public class Conexion {
     public Conexion(){
         conexion=null;
         try {
-            conexion=DriverManager.getConnection("jdbc:mysql://localhost/conferencia","root","");
+            conexion=DriverManager.getConnection("jdbc:mysql://localhost/conferencia?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
             
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
