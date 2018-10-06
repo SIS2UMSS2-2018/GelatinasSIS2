@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
+//import javax.swing.*;
 
 public class ConexionRegistro {
 
@@ -17,9 +17,9 @@ public class ConexionRegistro {
         con=new Conexion();
         if(con.isConectado()){
             conect=con.getConexion();
-            JOptionPane.showMessageDialog(null, "Conexion exitosa");
+            //JOptionPane.showMessageDialog(null, "Conexion exitosa");
         }else{
-            JOptionPane.showMessageDialog(null, "Error de conexion ");
+            //JOptionPane.showMessageDialog(null, "Error de conexion ");
         }
     }
 

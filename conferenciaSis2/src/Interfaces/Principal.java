@@ -6,6 +6,8 @@
 package Interfaces;
 import registrar.*;
 import AppPackage.AnimationClass;
+import java.awt.Desktop;
+import java.net.URI;
 import javax.swing.JOptionPane;
 public class Principal extends javax.swing.JFrame {
 
@@ -15,6 +17,14 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+    
+    public void abrirInternet(){
+        try{
+            Desktop.getDesktop().browse(URI.create("www.google.com"));
+        }catch(Exception e){
+            JOptionPane.showConfirmDialog(this,e);
+        }
     }
 
     /**
@@ -185,12 +195,30 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jLabelHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 40, 40));
 
         jLabelMusica.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/MusicalNotes32px.png"));
+        jLabelMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelMusica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelMusicaMouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabelMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 170, 40, 40));
 
         jLabelInternet.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Globe32px.png"));
+        jLabelInternet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelInternet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelInternetMouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabelInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, 40, 40));
 
         jLabelCalculadora.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Calculator.png"));
+        jLabelCalculadora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelCalculadora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelCalculadoraMouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabelCalculadora, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 130, 40, 40));
 
         jLabelFondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -278,7 +306,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelImagen1MouseClicked
 
     private void jLabelImagen2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen2MouseClicked
-        
+        RegistroDeExpositores interfaz= new RegistroDeExpositores();
+        interfaz.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabelImagen2MouseClicked
 
     private void jLabelImagen3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen3MouseClicked
@@ -286,6 +316,30 @@ public class Principal extends javax.swing.JFrame {
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelImagen3MouseClicked
+
+    private void jLabelInternetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInternetMouseClicked
+        abrirInternet();
+    }//GEN-LAST:event_jLabelInternetMouseClicked
+
+    private void jLabelMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMusicaMouseClicked
+        try{
+            Runtime rt = Runtime.getRuntime();
+            Process p = rt.exec("media");
+            p.waitFor();
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jLabelMusicaMouseClicked
+
+    private void jLabelCalculadoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelCalculadoraMouseClicked
+        try{
+            Runtime rt = Runtime.getRuntime();
+            Process p = rt.exec("calc");
+            p.waitFor();
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jLabelCalculadoraMouseClicked
 
     /**
      * @param args the command line arguments

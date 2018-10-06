@@ -41,6 +41,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto5 = new javax.swing.JLabel();
         jLabelTexto6 = new javax.swing.JLabel();
         jLabelTexto7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,6 +108,9 @@ public class ListaInformes extends javax.swing.JFrame {
             }
         });
         jLabelTexto4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelTexto4MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabelTexto4MouseExited(evt);
             }
@@ -206,6 +210,11 @@ public class ListaInformes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabelTexto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 230, 30));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Lista de información disponible");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 280, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
@@ -312,6 +321,12 @@ public class ListaInformes extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabelTexto5MouseClicked
 
+    private void jLabelTexto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto4MouseClicked
+        NumeroInscritos interfaz= new NumeroInscritos();
+        interfaz.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabelTexto4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +364,7 @@ public class ListaInformes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAtrás;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelTexto;
     private javax.swing.JLabel jLabelTexto1;

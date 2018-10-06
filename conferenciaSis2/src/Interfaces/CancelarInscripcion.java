@@ -35,6 +35,7 @@ public class CancelarInscripcion extends javax.swing.JFrame {
         jTextFieldActividad = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         jLabelActividad = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -78,13 +79,18 @@ public class CancelarInscripcion extends javax.swing.JFrame {
 
         jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelNombre.setText("Nombre:");
-        getContentPane().add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        jLabelNombre.setText("CI:");
+        getContentPane().add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         jLabelActividad.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabelActividad.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelActividad.setText("Actividad:");
+        jLabelActividad.setText("Grupo:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Cancelar inscripción");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 200, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Triste1.png"));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 520, 270));
@@ -149,6 +155,7 @@ public class CancelarInscripcion extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelActividad;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelNombre;

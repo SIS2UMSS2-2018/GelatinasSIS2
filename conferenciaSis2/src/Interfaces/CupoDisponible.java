@@ -84,9 +84,10 @@ public class CupoDisponible extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaCupo);
 
-        salir.setBackground(new java.awt.Color(102, 102, 255));
+        salir.setBackground(new java.awt.Color(204, 204, 255));
         salir.setForeground(new java.awt.Color(255, 255, 255));
         salir.setText("Atrás");
+        salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         salir.setContentAreaFilled(false);
         salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salir.addActionListener(new java.awt.event.ActionListener() {
