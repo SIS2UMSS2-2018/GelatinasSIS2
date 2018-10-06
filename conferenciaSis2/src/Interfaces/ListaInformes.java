@@ -198,7 +198,7 @@ public class ListaInformes extends javax.swing.JFrame {
 
         jLabelTexto7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTexto7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTexto7.setText("Informe de estudiantes por grupo");
+        jLabelTexto7.setText("Informe de asistentes por grupo");
         jLabelTexto7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelTexto7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
