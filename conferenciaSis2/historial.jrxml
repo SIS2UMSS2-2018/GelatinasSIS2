@@ -34,10 +34,6 @@
 				<textElement/>
 				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="16" y="11" width="70" height="63"/>
-				<imageExpression class="java.lang.String"><![CDATA["F:\\img\\report.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

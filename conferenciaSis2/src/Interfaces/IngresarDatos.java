@@ -52,7 +52,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jButtonIngresarDatos.setBackground(new java.awt.Color(102, 102, 255));
         jButtonIngresarDatos.setForeground(new java.awt.Color(255, 255, 255));
         jButtonIngresarDatos.setText("Ingresar Datos");
-        jButtonIngresarDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonIngresarDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonIngresarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonIngresarDatosActionPerformed(evt);
@@ -67,7 +67,7 @@ public class IngresarDatos extends javax.swing.JFrame {
         jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtras.setText("Atrás");
-        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtrasActionPerformed(evt);

@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import archivos.GenerarReporte;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ public class ListaInformes extends javax.swing.JFrame {
     /**
      * Creates new form ListaInformes
      */
+    GenerarReporte reportes = new GenerarReporte();
     public ListaInformes() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -52,7 +54,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jButtonAtrás.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtrás.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtrás.setText("Atrás");
-        jButtonAtrás.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtrás.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtrás.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtrásActionPerformed(evt);
@@ -64,7 +66,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto.setText("Informe cronograma de actividades");
         jLabelTexto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTextoMouseMoved(evt);
@@ -84,7 +86,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto1.setText("Informe participantes por tema");
         jLabelTexto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto1MouseMoved(evt);
@@ -101,7 +103,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto4.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto4.setText("Informe número de asistentes por grupo");
         jLabelTexto4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto4MouseMoved(evt);
@@ -121,7 +123,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto2.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto2.setText("Informe historial de expositores");
         jLabelTexto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto2MouseMoved(evt);
@@ -141,7 +143,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto3.setText("Información de contacto de expositores");
         jLabelTexto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto3MouseMoved(evt);
@@ -161,7 +163,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto5.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto5.setText("Informe cupos disponibles por grupo");
         jLabelTexto5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto5MouseMoved(evt);
@@ -181,7 +183,7 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto6.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto6.setText("Informe actividades por grupo");
         jLabelTexto6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto6MouseMoved(evt);
@@ -198,13 +200,16 @@ public class ListaInformes extends javax.swing.JFrame {
         jLabelTexto7.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTexto7.setText("Informe de estudiantes por grupo");
         jLabelTexto7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
-        jLabelTexto7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTexto7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTexto7MouseMoved(evt);
             }
         });
         jLabelTexto7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelTexto7MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabelTexto7MouseExited(evt);
             }
@@ -326,6 +331,10 @@ public class ListaInformes extends javax.swing.JFrame {
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTexto4MouseClicked
+
+    private void jLabelTexto7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto7MouseClicked
+        reportes.estudiantesPorGrupo();
+    }//GEN-LAST:event_jLabelTexto7MouseClicked
 
     /**
      * @param args the command line arguments

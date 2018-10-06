@@ -34,10 +34,6 @@
 				<textElement/>
 				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="16" y="11" width="70" height="63"/>
-				<imageExpression class="java.lang.String"><![CDATA["F:\\img\\report.jpg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -74,7 +70,7 @@
 				<text><![CDATA[HISTORIAL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="362" y="0" width="183" height="20"/>
+				<reportElement mode="Transparent" x="362" y="0" width="183" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Lucida Handwriting" size="12" isBold="true"/>
 				</textElement>
@@ -125,7 +121,13 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="34" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

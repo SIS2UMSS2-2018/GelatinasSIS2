@@ -34,7 +34,7 @@ Conexion con;
     public Historial() {
         con=new Conexion();
         initComponents();
-        //llenarTablaExposi();
+        llenarTablaExposi();
 /// ImageIcon icon = new ImageIcon(getClass().getResource("/src/ImagenesInterfaces/fondo.jpg"));
 
 //Icon icono = new ImageIcon(icon.getImage().getScaledInstance(fondoel.getWidth(), fondoel.getHeight(), Image.SCALE_DEFAULT));
