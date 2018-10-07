@@ -205,7 +205,7 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
        String grupo = (String) combo.getSelectedItem();
        int ciE = Integer.parseInt(ci.getText());
        String consulta1="SELECT id_asistente FROM asistentes WHERE nombre_asis='"+nombreE+"' AND ci_asis="+ciE+" AND apellido_asis='"+apellidoE+"'";
-       String consulta2="UPDATE asisten_grupo SET asistido ='v' WHERE grupos_id_grupo="+grupo+" AND asistentes_id_asistente IN ("+consulta1+")";
+       String consulta2="UPDATE asisten_grupo SET asistido ='S' WHERE grupos_id_grupo="+grupo+" AND asistentes_id_asistente IN ("+consulta1+")";
        if(conex.consulta(consulta2)){
        JOptionPane.showMessageDialog(null, "Registro Exitoso");
        }else JOptionPane.showMessageDialog(null, "No registrado");
