@@ -234,4 +234,16 @@ public class Consultas {
         
         return res;
     }
+    //aistencia por tema
+    public ResultSet reporteAsistenciaTema(String tema){
+        ResultSet res;
+        try {
+                res = sentencia.executeQuery("SELECT asistentes.ci_asis, asistentes.nombre_asis, asistentes.apellido_asis, grupos.id_grupo, inscripcion.asistido FROM asistentes, inscripcion, grupos, cronograma, expositores, temas WHERE asistentes.ci_asis = inscripcion.asistentes_ci_asis AND inscripcion.grupos_id_grupo = grupos.id_grupo and grupos.id_grupo = cronograma.grupos_id_grupo and cronograma.expositores_id_expo = expositores.id_expo and expositores.id_expo = temas.expositores_id_expo and temas.nombre_tema = '"+tema+"'");
+        } catch (SQLException ex) {
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res=null;
+        }
+        
+        return res;
+    }
 }
