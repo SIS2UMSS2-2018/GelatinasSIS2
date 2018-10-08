@@ -335,6 +335,13 @@ public class ListaInformes extends javax.swing.JFrame {
     private void jLabelTexto7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto7MouseClicked
         reportes.estudiantesPorGrupo();
     }//GEN-LAST:event_jLabelTexto7MouseClicked
+    
+    private void jLabelTexto6MouseClicked(java.awt.event.MouseEvent evt) {                                          
+    reportes.actividadesPorGrupo();
+
+
+
+    }                
 
     /**
      * @param args the command line arguments
