@@ -246,7 +246,7 @@ public class Consultas {
     public ResultSet reporteGrupos(){
         ResultSet res;
         try {
-                res = sentencia.executeQuery("SELECT hora, grupos_id_grupo, nombre_expo, apellido_expo, nombre_tema FROM cronograma, expositores, temas WHERE id_expo = id_expo and id_expo = id_temas");
+                res = sentencia.executeQuery("SELECT hora, grupos_id_grupo, nombre_expo, apellido_expo, nombre_tema FROM cronograma, expositores, temas WHERE id_expo = id_expo and id_expo = id_tema");
         } catch (SQLException ex) {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
             res=null;
