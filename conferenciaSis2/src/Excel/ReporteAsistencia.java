@@ -34,7 +34,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReporteAsistencia {
 
     public static void main(String args[]) throws SQLException {
-        reporte("algo algo");
+        reporte("");
     }
 
     public static void reporte(String tema) throws SQLException {
