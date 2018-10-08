@@ -54,6 +54,8 @@ Conexion con;
         jLabelCorreo = new javax.swing.JLabel();
         jLabelActividad = new javax.swing.JLabel();
         jLabelImagenEstudiante = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabelRegistro = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -75,9 +77,9 @@ Conexion con;
         });
         getContentPane().add(jButtonIngresarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, -1, -1));
         getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 340, -1));
-        getContentPane().add(jTextFieldCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 340, -1));
-        getContentPane().add(jTextFieldOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 340, -1));
-        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 340, -1));
+        getContentPane().add(jTextFieldCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 340, -1));
+        getContentPane().add(jTextFieldOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 340, -1));
+        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 340, -1));
 
         jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,20 +100,26 @@ Conexion con;
         jLabelOcupacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelOcupacion.setForeground(new java.awt.Color(255, 255, 255));
         jLabelOcupacion.setText("OCUPACIÓN:");
-        getContentPane().add(jLabelOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
+        getContentPane().add(jLabelOcupacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, -1, -1));
 
         jLabelCorreo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelCorreo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCorreo.setText("CORREO:");
-        getContentPane().add(jLabelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+        getContentPane().add(jLabelCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
 
         jLabelActividad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelActividad.setForeground(new java.awt.Color(255, 255, 255));
         jLabelActividad.setText("ACTIVIDAD:");
-        getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
+        getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, -1));
 
         jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png"));
         getContentPane().add(jLabelImagenEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 20, 460, 480));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("APELLIDO:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 340, 30));
 
         jLabelRegistro.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelRegistro.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,6 +224,7 @@ Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAtras;
     private javax.swing.JButton jButtonIngresarDatos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelActividad;
     private javax.swing.JLabel jLabelCorreo;
     private javax.swing.JLabel jLabelFondo;
@@ -223,6 +232,7 @@ Conexion con;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelOcupacion;
     private javax.swing.JLabel jLabelRegistro;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldActividad;
     private javax.swing.JTextField jTextFieldCorreo;
     private javax.swing.JTextField jTextFieldNombre;
