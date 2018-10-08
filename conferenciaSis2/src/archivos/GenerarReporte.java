@@ -59,6 +59,26 @@ Connection conn;
         }
     
     }
+    
+    public void actividadesPorGrupo() {
+
+ con=new Conexion();
+
+        try {
+            JasperReport reporte = (JasperReport)JRLoader.loadObject("actiXGrupos.jasper");
+            
+            Map parametro= new HashMap();
+            JasperPrint j = JasperFillManager.fillReport(reporte, null,con.getConexion());
+            JasperViewer jv = new JasperViewer(j,false);
+             jv.setTitle("ACTIVIDADES");
+             jv.setVisible(true);
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "error al mostrar el reporte  "+e);
+            System.out.println(""+ e);
+        }
+
+    }
+    
     public void pdf1(){
     try {
             JasperReport reporte = (JasperReport)JRLoader.loadObject("tabla.jasper");
