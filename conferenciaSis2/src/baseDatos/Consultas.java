@@ -60,29 +60,32 @@ public class Consultas {
         return res;
         
     }
-    
+    //precondicion, el alumno debe existir
     public boolean cancelarInscripcion(int ciAsistente,int idGrupo){
         boolean res=false;
-        
+            
         try {
+            
+            
             String query="SELECT cupos_dispo FROM grupos WHERE id_grupo='"+idGrupo+"'";
             ResultSet aux=sentencia.executeQuery(query);
-            int cupos=-1;
-            while(aux.next()){
-                cupos=aux.getInt(1);
-                System.out.println(cupos);
+            
+            if(aux.next()){
+                
+                int cupos=aux.getInt(1);
+                query="DELETE FROM asistentes WHERE ci_asis='"+ciAsistente+"'";
+                sentencia.executeUpdate(query);
+                cupos+=1;
+                query="UPDATE grupos SET cupos_dispo='"+cupos+"' WHERE id_grupo='"+idGrupo+"'";
+                sentencia.executeUpdate(query);
+                res=true;
+                
+            }else{
+                res=false;
             }
-            
-            query="DELETE FROM asistentes WHERE ci_asis='"+ciAsistente+"'";
-            sentencia.executeUpdate(query);
-            cupos+=1;
-            query="UPDATE grupos SET cupos_dispo='"+cupos+"' WHERE id_grupo='"+idGrupo+"'";
-            sentencia.executeUpdate(query);
-            res=true;
-            
+            //devuelve los datos de los estudiantes por grupo y tema
         } catch (SQLException ex) {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
-            
         }
         return res;
     }

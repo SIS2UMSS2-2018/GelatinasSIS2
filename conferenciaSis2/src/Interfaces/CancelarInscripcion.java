@@ -119,18 +119,27 @@ Conexion con;
         Consultas consu=new Consultas(conn);
         int id=Integer.parseInt(jTextFieldActividad.getText().trim());
         int nomb=Integer.parseInt(jTextFieldNombre.getText().trim());
-        if (consu.cancelarInscripcion(nomb,id )) {
+        if(consu.validarAsistente(id)){
+            if (consu.cancelarInscripcion(nomb,id )) {
             EliminacionExitosa el = new EliminacionExitosa();
             el.setVisible(true);
             jTextFieldNombre.setText("");
             jTextFieldActividad.setText("");
             jTextFieldNombre.requestFocus();
-        } else {
+            } else {
             
                   JOptionPane.showMessageDialog(null, "EL GRUPO QUE SELECCIONO NO EXISTE");
-      jTextFieldNombre.requestFocus();
-
+                  jTextFieldNombre.requestFocus();
+            }
+        }else{
+            jTextFieldNombre.setText("");
+            jTextFieldActividad.setText("");
+             JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS");
+                  jTextFieldNombre.requestFocus();
         }
+        
+
+        
         
         
 
