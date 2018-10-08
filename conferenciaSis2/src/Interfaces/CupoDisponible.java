@@ -50,8 +50,8 @@ public class CupoDisponible extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCupo = new javax.swing.JTable();
-        salir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButtonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -84,18 +84,6 @@ public class CupoDisponible extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaCupo);
 
-        salir.setBackground(new java.awt.Color(204, 204, 255));
-        salir.setForeground(new java.awt.Color(255, 255, 255));
-        salir.setText("Atrás");
-        salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        salir.setContentAreaFilled(false);
-        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -107,17 +95,13 @@ public class CupoDisponible extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salir)
-                .addGap(29, 29, 29))
+                .addGap(29, 194, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(salir, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(jLabel1)
                 .addGap(45, 45, 45)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
@@ -128,14 +112,25 @@ public class CupoDisponible extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
+        jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAtras.setText("Atrás");
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        ListaInformes interfaz = new ListaInformes();
-        interfaz.setVisible(true);
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+        ListaInformes ic= new ListaInformes();
+        ic.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_salirActionPerformed
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,11 +188,11 @@ public class CupoDisponible extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAtras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton salir;
     private javax.swing.JTable tablaCupo;
     // End of variables declaration//GEN-END:variables
 
