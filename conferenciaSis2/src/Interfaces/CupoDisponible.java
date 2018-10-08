@@ -89,7 +89,7 @@ public class CupoDisponible extends javax.swing.JFrame {
         salir.setText("Atrás");
         salir.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         salir.setContentAreaFilled(false);
-        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirActionPerformed(evt);
