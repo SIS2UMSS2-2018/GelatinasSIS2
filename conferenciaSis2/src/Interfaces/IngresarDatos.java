@@ -6,6 +6,7 @@
 package Interfaces;
 
 import baseDatos.Conexion;
+import baseDatos.Consultas;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -156,48 +157,29 @@ Conexion con;
 
     private void jButtonIngresarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarDatosActionPerformed
        if(con.isConectado()){
-         System.out.println("conexion exitosa");
             conn=con.getConexion();
-        
-        try {
-            String sql = "INSERT INTO asistentes "
-                    + "(nombre_asis,ocupacion_asis,actividad_asis,correo_asis)"
-                    + "values(?,?,?,?) ";
-                   
-
-// + "("+nombre.getText()+","+ci.getText()+","+ocu.getText()+","+ape.getText()+","+correo.getText()+")";
-            PreparedStatement ps = conn.prepareCall(sql);
-            System.out.println("se establecio la conexion");
+            int ci=Integer.parseInt(jTextField2.getText());
+            String nombre=jTextFieldNombre.getText();
+            String apellido=jTextField1.getText();
+            String correo=jTextFieldCorreo.getText();
+            String ocupacion=jTextFieldOcupacion.getText();
+            int idGrupo=Integer.parseInt(jTextFieldActividad.getText());
+            Consultas co= new Consultas(conn);
+            if(co.validarAsistente(ci)){
+                if(co.actualizarInscripcion(idGrupo, ci)){
+                    JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
+                }else{
+                    JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION");
+                }
+            }else if(co.insertarAsistente(ci, nombre,apellido,ocupacion, correo,idGrupo)){
+                JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
+            }else{
+                    JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION2");
             
-            ps.setString(1, jTextFieldNombre.getText());
-            ps.setString(2, jTextFieldOcupacion.getText());
-            ps.setString(3, jTextFieldActividad.getText());
-            ps.setString(4, jTextFieldCorreo.getText());
-
-            
-           
-          
-            int n = ps.executeUpdate();
-            if(n>0){
-                JOptionPane.showMessageDialog(null, "Nuevo asistente registrado correctamente");
-                NotificacionRegistro interfaz = new NotificacionRegistro();
-        interfaz.setVisible(true);
-        this.setVisible(false);
-                
             }
-
-        } catch (SQLException | HeadlessException e) {
-                JOptionPane.showMessageDialog(null,"Error"+ e.getMessage());
-        }
-        }
-
-        
-        
-        
-        
-//        NotificacionRegistro interfaz = new NotificacionRegistro();
-//        interfaz.setVisible(true);
-//        this.dispose();
+       }else{
+                    JOptionPane.showMessageDialog(null, "ERROR DE CONEXION");
+       }
     }//GEN-LAST:event_jButtonIngresarDatosActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

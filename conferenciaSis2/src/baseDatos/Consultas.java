@@ -113,17 +113,34 @@ public class Consultas {
             return res;
     }
     // Inserta una tupla a la tabla de asistentes
-    public void insertarAsistente(int ci_asistente, String nombre_asis, String apellido_asis, String ocupacion_asis, String correo_asis){
-        String values = "(" + Integer.toString(ci_asistente) + ',' + "'"+apellido_asis+"'" + ',' + "'"+ocupacion_asis+"'" + ',' + "'"+correo_asis+"'" + ")";
-        String query = "INSERT INTO asistentes VALUES " + values;
+    public boolean insertarAsistente(int ci_asistente, String nombre_asis, String apellido_asis, String ocupacion_asis, String correo_asis, int idGrupo){
+        boolean res;
+        String values = "('"+Integer.toString(ci_asistente) +"','"+nombre_asis+"','"+apellido_asis+"','"+ocupacion_asis+"','"+correo_asis+"')";
+        String query = "INSERT INTO asistentes (ci_asis,nombre_asis,apellido_asis,ocupacion_asis,correo_asis) VALUES" + values;
         try{
             sentencia.executeUpdate(query);
+            res=actualizarInscripcion(idGrupo,ci_asistente);
         }
         catch(SQLException ex){
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res=false;
         }
+        return res;
     }
-    
+    //inserta el ci del asistente y el id del grupo de la tabla inscripcion
+    public boolean actualizarInscripcion(int idGrupo, int ci){
+        boolean res;
+        String query="INSERT INTO inscripcion(grupos_id_grupo,asistentes_ci_asis,asistido) VALUES "+"('"+idGrupo+"','"+ci+"','N')";
+        try{
+            sentencia.executeUpdate(query);
+            res=true;
+        }
+        catch(SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res=false;
+        }
+        return res;
+    }
     // Reduce en 1 los cupos de un grupo dado su id 
     public void reducirCupo(int id_grupo){
         String query = "UPDATE grupos SET cupos_dispo = cupos_dispo - 1 WHERE id_grupo = " + Integer.toString(id_grupo);
