@@ -60,7 +60,7 @@ Conexion con;
         jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtras.setText("Atrás");
-        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtrasActionPerformed(evt);
@@ -71,7 +71,7 @@ Conexion con;
         jButtonCancelar.setBackground(new java.awt.Color(102, 102, 255));
         jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar.setText("Cancelar Inscripción");
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -80,7 +80,7 @@ Conexion con;
         getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
 
         jTextFieldNombre.setText(" ");
-        getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 330, 20));
+        getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 330, 30));
 
         jTextFieldActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,24 +114,23 @@ Conexion con;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-conn=con.getConexion();
+        conn=con.getConexion();
         
         Consultas consu=new Consultas(conn);
         int id=Integer.parseInt(jTextFieldActividad.getText().trim());
         int nomb=Integer.parseInt(jTextFieldNombre.getText().trim());
         if (consu.cancelarInscripcion(nomb,id )) {
-      JOptionPane.showMessageDialog(null, "usted se retiro");
-      jTextFieldNombre.setText("");
-      jTextFieldActividad.setText("");
-      jTextFieldNombre.requestFocus();
+            EliminacionExitosa el = new EliminacionExitosa();
+            el.setVisible(true);
+            jTextFieldNombre.setText("");
+            jTextFieldActividad.setText("");
+            jTextFieldNombre.requestFocus();
         } else {
             
                   JOptionPane.showMessageDialog(null, "EL GRUPO QUE SELECCIONO NO EXISTE");
       jTextFieldNombre.requestFocus();
 
         }
-
-        
         
         
 
