@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import correo.Correo;
 import baseDatos.Conexion;
 import baseDatos.Consultas;
 import java.awt.HeadlessException;
@@ -158,6 +159,7 @@ Conexion con;
     private void jButtonIngresarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarDatosActionPerformed
        if(con.isConectado()){
             conn=con.getConexion();
+            Correo c= new Correo();
             int ci=Integer.parseInt(jTextField2.getText());
             String nombre=jTextFieldNombre.getText();
             String apellido=jTextField1.getText();
@@ -167,18 +169,26 @@ Conexion con;
             Consultas co= new Consultas(conn);
             if(co.validarAsistente(ci)){
                 if(co.actualizarInscripcion(idGrupo, ci)){
+                    c.enviarCorreo(correo);
                     JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
+                    limpiarTextField();
                 }else{
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION");
+                    limpiarTextField();
                 }
             }else if(co.insertarAsistente(ci, nombre,apellido,ocupacion, correo,idGrupo)){
+                System.out.println("xdxd");
+                co.actualizarInscripcion(idGrupo, ci);
+                c.enviarCorreo(correo);
                 JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
+                limpiarTextField();
             }else{
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION2");
-            
+                    limpiarTextField();
             }
        }else{
                     JOptionPane.showMessageDialog(null, "ERROR DE CONEXION");
+                    limpiarTextField();
        }
     }//GEN-LAST:event_jButtonIngresarDatosActionPerformed
 
@@ -220,6 +230,14 @@ Conexion con;
                 new IngresarDatos().setVisible(true);
             }
         });
+    }
+    public void limpiarTextField(){
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextFieldActividad.setText("");
+        jTextFieldCorreo.setText("");
+        jTextFieldNombre.setText("");
+        jTextFieldOcupacion.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
