@@ -73,8 +73,10 @@ public class Consultas {
             if(aux.next()){
                 
                 int cupos=aux.getInt(1);
-                query="DELETE FROM asistentes WHERE ci_asis='"+ciAsistente+"'";
+                query="DELETE FROM inscripcion WHERE grupos_id_grupos='"+idGrupo+"' AND asistentes_ci_asis='"+ciAsistente+"'";
                 sentencia.executeUpdate(query);
+                //query="DELETE FROM asistentes WHERE ci_asis='"+ciAsistente+"'";
+                //sentencia.executeUpdate(query);
                 cupos+=1;
                 query="UPDATE grupos SET cupos_dispo='"+cupos+"' WHERE id_grupo='"+idGrupo+"'";
                 sentencia.executeUpdate(query);
@@ -118,20 +120,7 @@ public class Consultas {
         String values = "('"+Integer.toString(ci_asistente) +"','"+nombre_asis+"','"+apellido_asis+"','"+ocupacion_asis+"','"+correo_asis+"')";
         String query = "INSERT INTO asistentes (ci_asis,nombre_asis,apellido_asis,ocupacion_asis,correo_asis) VALUES" + values;
         try{
-            sentencia.executeUpdate(query);
-            res=actualizarInscripcion(idGrupo,ci_asistente);
-        }
-        catch(SQLException ex){
-            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
-            res=false;
-        }
-        return res;
-    }
-    //inserta el ci del asistente y el id del grupo de la tabla inscripcion
-    public boolean actualizarInscripcion(int idGrupo, int ci){
-        boolean res;
-        String query="INSERT INTO inscripcion(grupos_id_grupo,asistentes_ci_asis,asistido) VALUES "+"('"+idGrupo+"','"+ci+"','N')";
-        try{
+            //actualizarInscripcion(idGrupo, ci_asistente);
             sentencia.executeUpdate(query);
             res=true;
         }
@@ -141,9 +130,34 @@ public class Consultas {
         }
         return res;
     }
+    //inserta el ci del asistente y el id del grupo de la tabla inscripcion
+    public boolean actualizarInscripcion(int idGrupo, int ci){
+        boolean res=false;
+        String query="INSERT INTO inscripcion(grupos_id_grupo,asistentes_ci_asis,asistido) VALUES "+"('"+idGrupo+"','"+ci+"','N')";
+        String query2="SELECT cupos_dispo FROM grupos WHERE id_grupo='"+idGrupo+"'";
+        try{
+            ResultSet r= sentencia.executeQuery(query2);
+            
+            if(r.next()){
+                int cupos=r.getInt(1);
+                cupos--;
+                System.out.println(cupos);
+                sentencia.executeUpdate(query);
+                query="UPDATE grupos SET cupos_dispo='"+cupos+"'"+"WHERE id_grupo='"+idGrupo+"'";
+                sentencia.executeUpdate(query);
+                res=true;
+                
+            }
+        }
+        catch(SQLException ex){
+            Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
+            res=false;
+        }
+        return res;
+    }
     // Reduce en 1 los cupos de un grupo dado su id 
     public void reducirCupo(int id_grupo){
-        String query = "UPDATE grupos SET cupos_dispo = cupos_dispo - 1 WHERE id_grupo = " + Integer.toString(id_grupo);
+        String query = "UPDATE grupos SET cupos_dispo = cupos_dispo - 1 WHERE id_grupo = '"+id_grupo+"'";
         try{
             sentencia.executeUpdate(query);
         }
