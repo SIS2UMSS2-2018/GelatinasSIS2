@@ -6,6 +6,7 @@
 package Interfaces;
 import registrar.*;
 import AppPackage.AnimationClass;
+import baseDatos.Consultas;
 import java.awt.Desktop;
 import java.net.URI;
 import javax.swing.JOptionPane;
@@ -14,7 +15,9 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal2
      */
-    public Principal() {
+    Consultas co;
+    public Principal(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -294,25 +297,25 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelImagen3MouseExited
 
     private void jLabelImagen4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen4MouseClicked
-        InscripcionYCancelacion interfaz= new InscripcionYCancelacion();
+        InscripcionYCancelacion interfaz= new InscripcionYCancelacion(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelImagen4MouseClicked
 
     private void jLabelImagen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen1MouseClicked
-        ListaInformes interfaz= new ListaInformes();
+        ListaInformes interfaz= new ListaInformes(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelImagen1MouseClicked
 
     private void jLabelImagen2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen2MouseClicked
-        RegistroDeExpositores interfaz= new RegistroDeExpositores();
+        RegistroDeExpositores interfaz= new RegistroDeExpositores(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelImagen2MouseClicked
 
     private void jLabelImagen3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelImagen3MouseClicked
-        RegistrarAsistencia interfaz= new RegistrarAsistencia();
+        RegistrarAsistencia interfaz= new RegistrarAsistencia(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelImagen3MouseClicked
@@ -372,7 +375,7 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                //new Principal().setVisible(true);
             }
         });
     }

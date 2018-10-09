@@ -5,7 +5,9 @@
  */
 package Interfaces;
 
+import Excel.ReporteAsistencia;
 import archivos.GenerarReporte;
+import baseDatos.Consultas;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,8 +21,10 @@ public class ListaInformes extends javax.swing.JFrame {
     /**
      * Creates new form ListaInformes
      */
+    Consultas co;
     GenerarReporte reportes = new GenerarReporte();
-    public ListaInformes() {
+    public ListaInformes(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -84,7 +88,7 @@ public class ListaInformes extends javax.swing.JFrame {
 
         jLabelTexto1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelTexto1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTexto1.setText("Informe participantes por tema");
+        jLabelTexto1.setText("Informe control de asistencia");
         jLabelTexto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 102)));
         jLabelTexto1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTexto1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -93,6 +97,9 @@ public class ListaInformes extends javax.swing.JFrame {
             }
         });
         jLabelTexto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelTexto1MouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabelTexto1MouseExited(evt);
             }
@@ -292,25 +299,25 @@ public class ListaInformes extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelTexto6MouseExited
 
     private void jButtonAtrásActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrásActionPerformed
-        Principal interfaz= new Principal();
+        Principal interfaz= new Principal(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonAtrásActionPerformed
 
     private void jLabelTexto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto2MouseClicked
-        Historial interfaz = new Historial();
+        Historial interfaz = new Historial(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTexto2MouseClicked
 
     private void jLabelTexto3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto3MouseClicked
-        InformacionExpositores interfaz = new InformacionExpositores();
+        InformacionExpositores interfaz = new InformacionExpositores(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTexto3MouseClicked
 
     private void jLabelTextoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTextoMouseClicked
-        InformacionGrupos interfaz = new InformacionGrupos();
+        InformacionGrupos interfaz = new InformacionGrupos(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTextoMouseClicked
@@ -318,7 +325,7 @@ public class ListaInformes extends javax.swing.JFrame {
     private void jLabelTexto5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto5MouseClicked
         CupoDisponible interfaz = null;
         try {
-            interfaz = new CupoDisponible();
+            interfaz = new CupoDisponible(co);
         } catch (SQLException ex) {
             Logger.getLogger(ListaInformes.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -327,7 +334,7 @@ public class ListaInformes extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelTexto5MouseClicked
 
     private void jLabelTexto4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto4MouseClicked
-        NumeroInscritos interfaz= new NumeroInscritos();
+        NumeroInscritos interfaz= new NumeroInscritos(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTexto4MouseClicked
@@ -342,6 +349,12 @@ public class ListaInformes extends javax.swing.JFrame {
 
 
     }                
+
+    private void jLabelTexto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTexto1MouseClicked
+        AsistentesTema as = new AsistentesTema(co);
+        as.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabelTexto1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -373,7 +386,7 @@ public class ListaInformes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaInformes().setVisible(true);
+                //new ListaInformes().setVisible(true);
             }
         });
     }

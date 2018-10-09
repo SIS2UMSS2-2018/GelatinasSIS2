@@ -27,9 +27,9 @@ public class IngresarDatos extends javax.swing.JFrame {
     Connection conn;
 Statement sent=null;
 Conexion con;
-
-    
-    public IngresarDatos() {
+Consultas co;
+    public IngresarDatos(Consultas co) {
+        this.co = co;
         initComponents();
         con=new Conexion();
 
@@ -151,7 +151,7 @@ Conexion con;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        InscripcionYCancelacion interfaz = new InscripcionYCancelacion();
+        InscripcionYCancelacion interfaz = new InscripcionYCancelacion(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -163,7 +163,7 @@ Conexion con;
             int ci=Integer.parseInt(jTextField2.getText());
             String nombre=jTextFieldNombre.getText();
             String apellido=jTextField1.getText();
-            String correo=jTextFieldCorreo.getText();
+             String correo=jTextFieldCorreo.getText();
             String ocupacion=jTextFieldOcupacion.getText();
             int idGrupo=Integer.parseInt(jTextFieldActividad.getText());
             Consultas co= new Consultas(conn);
@@ -171,24 +171,17 @@ Conexion con;
                 if(co.actualizarInscripcion(idGrupo, ci)){
                     c.enviarCorreo(correo);
                     JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
-                    limpiarTextField();
                 }else{
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION");
-                    limpiarTextField();
                 }
             }else if(co.insertarAsistente(ci, nombre,apellido,ocupacion, correo,idGrupo)){
-                System.out.println("xdxd");
-                co.actualizarInscripcion(idGrupo, ci);
-                c.enviarCorreo(correo);
                 JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
-                limpiarTextField();
             }else{
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION2");
-                    limpiarTextField();
+            
             }
        }else{
                     JOptionPane.showMessageDialog(null, "ERROR DE CONEXION");
-                    limpiarTextField();
        }
     }//GEN-LAST:event_jButtonIngresarDatosActionPerformed
 
@@ -227,17 +220,9 @@ Conexion con;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IngresarDatos().setVisible(true);
+               // new IngresarDatos().setVisible(true);
             }
         });
-    }
-    public void limpiarTextField(){
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextFieldActividad.setText("");
-        jTextFieldCorreo.setText("");
-        jTextFieldNombre.setText("");
-        jTextFieldOcupacion.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

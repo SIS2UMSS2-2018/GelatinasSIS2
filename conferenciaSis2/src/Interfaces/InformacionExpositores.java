@@ -59,10 +59,10 @@ public class InformacionExpositores extends javax.swing.JFrame {
         }
     }
     
-    public InformacionExpositores() {
+    public InformacionExpositores(Consultas co) {
         initComponents();
         this.setLocationRelativeTo(null);
-        con = new Consultas( (new Conexion()).getConexion() );
+        con = co;
         llenarArrayListsConNombres();
         llenarJComboBox();
         AutoCompleteDecorator.decorate(jComboBoxNombresExpositores);
@@ -137,7 +137,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
     }//GEN-LAST:event_botonObtenerInformacionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ListaInformes interfaz = new ListaInformes();
+        ListaInformes interfaz = new ListaInformes(con);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -172,7 +172,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InformacionExpositores().setVisible(true);
+               // new InformacionExpositores().setVisible(true);
             }
         });
     }

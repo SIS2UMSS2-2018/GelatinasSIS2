@@ -5,6 +5,12 @@
  */
 package Interfaces;
 
+import Excel.Reporte;
+import baseDatos.Consultas;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Edgar Ruben B
@@ -14,7 +20,9 @@ public class InformacionGrupos extends javax.swing.JFrame {
     /**
      * Creates new form InterfazInformacionGrupos
      */
-    public InformacionGrupos() {
+    Consultas co;
+    public InformacionGrupos(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -45,7 +53,7 @@ public class InformacionGrupos extends javax.swing.JFrame {
         jButtonVolver.setBackground(new java.awt.Color(102, 102, 255));
         jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setText("Atrás");
-        jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverActionPerformed(evt);
@@ -56,7 +64,12 @@ public class InformacionGrupos extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Generar Informe");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
 
         jLabelTexto.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
@@ -96,10 +109,19 @@ public class InformacionGrupos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        ListaInformes interfaz = new ListaInformes();
+        ListaInformes interfaz = new ListaInformes(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Reporte re = new Reporte();
+        try {
+            re.reporte();
+        } catch (SQLException ex) {
+            Logger.getLogger(InformacionGrupos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,7 +156,7 @@ public class InformacionGrupos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InformacionGrupos().setVisible(true);
+                //new InformacionGrupos().setVisible(true);
             }
         });
     }

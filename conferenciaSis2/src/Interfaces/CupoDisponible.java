@@ -24,11 +24,12 @@ public class CupoDisponible extends javax.swing.JFrame {
     DefaultTableModel tb;
     String data[][] = {};
     String cabeza[] = {"GRUPO", "CUPO DISPONIBLE"};
-
+    Consultas consulta;
     /**
      * Creates new form CupoDisponible
      */
-    public CupoDisponible() throws SQLException {
+    public CupoDisponible(Consultas co) throws SQLException {
+       consulta = co;
         initComponents();
         this.setLocationRelativeTo(null);
         tb = new DefaultTableModel(data, cabeza);
@@ -127,7 +128,7 @@ public class CupoDisponible extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        ListaInformes ic= new ListaInformes();
+        ListaInformes ic= new ListaInformes(consulta);
         ic.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -160,20 +161,10 @@ public class CupoDisponible extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new CupoDisponible().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(CupoDisponible.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
+    
     }
 
     public void llenarTabla() throws SQLException {
-        Conexion con = new Conexion();
-        Consultas consulta = new Consultas(con.getConexion());
         ResultSet query = consulta.obtenerCantGrupo();
         while (query.next()) {
             Object[] fila = new Object[2];

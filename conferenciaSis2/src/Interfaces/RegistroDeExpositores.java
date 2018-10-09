@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import baseDatos.Consultas;
+
 /**
  *
  * @author Edgar Ruben B
@@ -14,7 +16,9 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
     /**
      * Creates new form RegistroDeExpositores
      */
-    public RegistroDeExpositores() {
+    Consultas co;
+    public RegistroDeExpositores(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -107,7 +111,7 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        Principal interfaz = new Principal();
+        Principal interfaz = new Principal(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -142,7 +146,7 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroDeExpositores().setVisible(true);
+               // new RegistroDeExpositores().setVisible(true);
             }
         });
     }

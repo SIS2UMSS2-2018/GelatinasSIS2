@@ -14,8 +14,8 @@ package correo;
  */
 public class TestCorreo {
     public static void main(String[] args) {
-        Correo c= new Correo();
-        if(c.enviarCorreo("cbrt113@gmail.com")){
+        Correo c= new Correo("cbrt113@gmail.com");
+        if(c.enviarCorreo()){
             System.out.println("enviado");
         }else{
             System.out.println("error");

@@ -24,8 +24,10 @@ public class CancelarInscripcion extends javax.swing.JFrame {
     Connection conn;
 Statement sent=null;
 Conexion con;
+Consultas consu;
 
-    public CancelarInscripcion() {
+    public CancelarInscripcion(Consultas co) {
+        consu=co;
         initComponents();
         con=new Conexion();
         this.setLocationRelativeTo(null);
@@ -87,7 +89,7 @@ Conexion con;
                 jTextFieldActividadActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 330, 30));
+        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 330, -1));
 
         jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,14 +116,12 @@ Conexion con;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        conn=con.getConexion();
+
         
-        Consultas consu=new Consultas(conn);
-        int idGrupo=Integer.parseInt(jTextFieldActividad.getText());
-        int ci=Integer.parseInt(jTextFieldNombre.getText().trim());
-        if(consu.validarAsistente(ci)){
-            if (consu.cancelarInscripcion(ci,idGrupo )) {
-            EliminacionExitosa el = new EliminacionExitosa();
+        int id=Integer.parseInt(jTextFieldActividad.getText().trim());
+        int nomb=Integer.parseInt(jTextFieldNombre.getText().trim());
+            if (consu.cancelarInscripcion(nomb,id )) {
+            EliminacionExitosa el = new EliminacionExitosa(consu);
             el.setVisible(true);
             jTextFieldNombre.setText("");
             jTextFieldActividad.setText("");
@@ -131,12 +131,7 @@ Conexion con;
                   JOptionPane.showMessageDialog(null, "EL GRUPO QUE SELECCIONO NO EXISTE");
                   jTextFieldNombre.requestFocus();
             }
-        }else{
-            jTextFieldNombre.setText("");
-            jTextFieldActividad.setText("");
-             JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS");
-                  jTextFieldNombre.requestFocus();
-        }
+        
         
 
         
@@ -151,7 +146,7 @@ Conexion con;
     }//GEN-LAST:event_jTextFieldActividadActionPerformed
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        InscripcionYCancelacion ic= new InscripcionYCancelacion();
+        InscripcionYCancelacion ic= new InscripcionYCancelacion(consu);
         ic.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonAtrasActionPerformed
@@ -186,7 +181,7 @@ Conexion con;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CancelarInscripcion().setVisible(true);
+                //new CancelarInscripcion().setVisible(true);
             }
         });
     }

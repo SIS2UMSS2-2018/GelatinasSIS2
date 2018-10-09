@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import baseDatos.Consultas;
+
 /**
  *
  * @author Edgar Ruben B
@@ -14,7 +16,9 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
     /**
      * Creates new form IncripcionYCancelacion
      */
-    public InscripcionYCancelacion() {
+    Consultas co;
+    public InscripcionYCancelacion(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -121,7 +125,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        CancelarInscripcion interfaz= new CancelarInscripcion();
+        CancelarInscripcion interfaz= new CancelarInscripcion(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
@@ -143,25 +147,25 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelTristeMouseExited
 
     private void jLabelFelizMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFelizMouseClicked
-        IngresarDatos id= new IngresarDatos();
+        IngresarDatos id= new IngresarDatos(co);
         id.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelFelizMouseClicked
 
     private void jLabelTristeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelTristeMouseClicked
-        CancelarInscripcion interfaz= new CancelarInscripcion();
+        CancelarInscripcion interfaz= new CancelarInscripcion(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabelTristeMouseClicked
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
-        Principal interfaz= new Principal();
+        Principal interfaz= new Principal(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelar1ActionPerformed
-        IngresarDatos id= new IngresarDatos();
+        IngresarDatos id= new IngresarDatos(co);
         id.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCancelar1ActionPerformed
@@ -197,7 +201,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InscripcionYCancelacion().setVisible(true);
+               // new InscripcionYCancelacion().setVisible(true);
             }
         });
     }

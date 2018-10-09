@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Interfaces.IngresarDatos;
+import baseDatos.Consultas;
 
 
 /**
@@ -17,7 +18,9 @@ public class EliminacionExitosa extends javax.swing.JFrame {
     /**
      * Creates new form EliminacionExitosa
      */
-    public EliminacionExitosa() {
+    Consultas co;
+    public EliminacionExitosa(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -64,7 +67,7 @@ public class EliminacionExitosa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        CancelarInscripcion interfaz = new CancelarInscripcion();
+        CancelarInscripcion interfaz = new CancelarInscripcion(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
@@ -99,7 +102,7 @@ public class EliminacionExitosa extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminacionExitosa().setVisible(true);
+                //new EliminacionExitosa().setVisible(true);
             }
         });
     }

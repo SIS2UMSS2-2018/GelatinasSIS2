@@ -7,6 +7,7 @@ package registrar;
  */
 import registrar.ConexionRegistro;
 import Interfaces.*;
+import baseDatos.Consultas;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -22,7 +23,9 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
     /**
      * Creates new form RegistrarAsistencia
      */
-    public RegistrarAsistencia(){
+ Consultas co;
+    public RegistrarAsistencia(Consultas co){
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
         //conex.conexion();
@@ -104,7 +107,7 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Registrar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -114,7 +117,7 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(102, 102, 255));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Salir");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -212,7 +215,7 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Principal interfaz = new Principal();
+        Principal interfaz = new Principal(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -248,7 +251,7 @@ public class RegistrarAsistencia extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                
-                    new RegistrarAsistencia().setVisible(true);
+                   // new RegistrarAsistencia().setVisible(true);
                 
             }
         });

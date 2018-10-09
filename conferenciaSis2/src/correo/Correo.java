@@ -24,10 +24,12 @@ public class Correo {
         private String pass;
         private String rutaArch;
         private String nomArch;
+        private String destino;
         private String asunto;
         private String mensaje;
-    public Correo(){
+    public Correo(String des){
         
+        destino=des;
         usuario="confsis2@gmail.com";
         pass="kzdgbbpwkqfbyomi";
         asunto="verificacion de inscripcion";
@@ -89,11 +91,16 @@ public class Correo {
     /**
      * @return the destino
      */
+    public String getDestino() {
+        return destino;
+    }
 
     /**
      * @param destino the destino to set
      */
-    
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 
     /**
      * @return the asunto
@@ -122,7 +129,7 @@ public class Correo {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    public boolean enviarCorreo(String destino){
+    public boolean enviarCorreo(){
             try {
                 Properties pro= new Properties();
                 pro.put("mail.smtp.host","smtp.gmail.com");

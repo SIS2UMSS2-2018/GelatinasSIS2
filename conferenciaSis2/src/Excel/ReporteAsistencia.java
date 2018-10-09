@@ -70,9 +70,9 @@ public class ReporteAsistencia {
             Row filaTitulo = sheet.createRow(1);
             Cell celdaTitulo = filaTitulo.createCell(1);
             celdaTitulo.setCellStyle(tituloEstilo);
-            celdaTitulo.setCellValue("Reporte Asistencia tema: " +"\""+tema+"\"");
+            celdaTitulo.setCellValue("Reporte de Asistentes tema: " +"\""+tema+"\"");
             sheet.addMergedRegion(new CellRangeAddress(1,3,1,4));
-            String[] cabecera = new String[]{"CI", "Nombre Asistente","Apellido Asistente","Id Grupo", "Asistido"};
+            String[] cabecera = new String[]{"CI", "Nombre Asistente","Apellido Asistente","Id Grupo"};
             CellStyle estiloCabezera = book.createCellStyle();
             
             estiloCabezera.setFillForegroundColor(IndexedColors.GOLD.getIndex());
@@ -89,7 +89,7 @@ public class ReporteAsistencia {
             fuenteCabezera.setColor(IndexedColors.BLACK.getIndex());
             fuenteCabezera.setFontHeightInPoints((short) 14);
             estiloCabezera.setFont(fuenteCabezera);
-            Row filaEncabezados = sheet.createRow(5);
+            Row filaEncabezados = sheet.createRow(4);
             for (int i = 0; i < cabecera.length; i++) {
                 Cell celdaEncabezado = filaEncabezados.createCell(i);
                 celdaEncabezado.setCellStyle(estiloCabezera);

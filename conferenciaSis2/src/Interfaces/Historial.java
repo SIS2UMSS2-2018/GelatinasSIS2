@@ -7,6 +7,7 @@ package Interfaces;
 
 import archivos.GenerarReporte;
 import baseDatos.Conexion;
+import baseDatos.Consultas;
 //import java.awt.Image;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,9 +31,9 @@ public class Historial extends javax.swing.JFrame {
 Connection conn;
 Statement sent=null;
 Conexion con;
-
-    public Historial() {
-        con=new Conexion();
+Consultas  co;
+    public Historial(Consultas co) {
+        this.co =co;
         initComponents();
         llenarTablaExposi();
 /// ImageIcon icon = new ImageIcon(getClass().getResource("/src/ImagenesInterfaces/fondo.jpg"));
@@ -119,7 +120,7 @@ Conexion con;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        ListaInformes interfaz = new ListaInformes();
+        ListaInformes interfaz = new ListaInformes(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
@@ -159,7 +160,7 @@ Conexion con;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Historial().setVisible(true);
+                //new Historial().setVisible(true);
             }
         });
     }
@@ -177,15 +178,13 @@ Conexion con;
    
      if(con.isConectado()){
          System.out.println("conexion exitosa");
-            conn=con.getConexion();
              try {
             
             String[]titulos = {"Carnet", "Nombre","Apellido", "Historial","Nro Contacto"}; 
-            String sql = "SELECT  id_expo,nombre_expo,apellido_expo,historial,nro_contacto FROM   expositores";
             model_expo = new DefaultTableModel(null, titulos);
-            sent= conn.createStatement();
-            ResultSet rs=sent.executeQuery(sql);
             
+            ResultSet rs=co.getHistorial();
+                    
             String[]fila = new String[5];
             while(rs.next()){
                 fila[0]=rs.getString("id_expo");

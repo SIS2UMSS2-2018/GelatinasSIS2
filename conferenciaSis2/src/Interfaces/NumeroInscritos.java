@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import baseDatos.Consultas;
+
 /**
  *
  * @author Edgar Ruben B
@@ -14,7 +16,9 @@ public class NumeroInscritos extends javax.swing.JFrame {
     /**
      * Creates new form NumeroInscritos
      */
-    public NumeroInscritos() {
+    Consultas co;
+    public NumeroInscritos(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -75,7 +79,7 @@ public class NumeroInscritos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButronAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButronAtras1ActionPerformed
-        ListaInformes interfaz= new ListaInformes();
+        ListaInformes interfaz= new ListaInformes(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButronAtras1ActionPerformed
@@ -110,7 +114,7 @@ public class NumeroInscritos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NumeroInscritos().setVisible(true);
+                //new NumeroInscritos().setVisible(true);
             }
         });
     }

@@ -5,6 +5,8 @@
  */
 package Interfaces;
 
+import baseDatos.Consultas;
+
 /**
  *
  * @author Edgar Ruben B
@@ -14,7 +16,9 @@ public class NotificacionRegistro extends javax.swing.JFrame {
     /**
      * Creates new form InterfazNotificacionRegistro
      */
-    public NotificacionRegistro() {
+    Consultas co;
+    public NotificacionRegistro(Consultas co) {
+        this.co = co;
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -63,7 +67,7 @@ public class NotificacionRegistro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        IngresarDatos interfaz = new IngresarDatos();
+        IngresarDatos interfaz = new IngresarDatos(co);
         interfaz.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirActionPerformed
@@ -99,7 +103,7 @@ public class NotificacionRegistro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NotificacionRegistro().setVisible(true);
+                //new NotificacionRegistro().setVisible(true);
             }
         });
     }
