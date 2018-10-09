@@ -4,12 +4,20 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString>
-		<![CDATA[select a.nombre_asis, a.apellido_asis, g.id_grupo, t.nombre_tema from asistentes a, grupos g, asisten_grupo ag, temas t where g.id_grupo= ag.grupos_id_grupo and a.ci_asis = ag.asistentes_ci_asistente and t.id_tema = g.temas_id_tema]]>
+		<![CDATA[SELECT
+     a.`nombre_asis`,
+     a.`apellido_asis`,
+     t.`nombre_tema`,
+     cronograma.`grupos_id_grupo` AS cronograma_grupos_id_grupo
+FROM
+     `inscripcion` inscripcion INNER JOIN `asistentes` a ON inscripcion.`asistentes_ci_asis` = a.`ci_asis`
+     INNER JOIN `cronograma` cronograma ON inscripcion.`grupos_id_grupo` = cronograma.`grupos_id_grupo`
+     INNER JOIN `temas` t ON cronograma.`expositores_id_expo` = t.`expositores_id_expo`]]>
 	</queryString>
 	<field name="nombre_asis" class="java.lang.String"/>
 	<field name="apellido_asis" class="java.lang.String"/>
-	<field name="id_grupo" class="java.lang.Long"/>
 	<field name="nombre_tema" class="java.lang.String"/>
+	<field name="cronograma_grupos_id_grupo" class="java.lang.Long"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -30,28 +38,28 @@
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="281" y="2" width="100" height="20"/>
+				<reportElement x="306" y="2" width="100" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Lucida Handwriting" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="381" y="2" width="100" height="20"/>
+				<reportElement x="406" y="2" width="100" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Lucida Handwriting" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[APELLIDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="81" y="2" width="67" height="20"/>
+				<reportElement x="45" y="2" width="67" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Lucida Handwriting" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GRUPO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="148" y="2" width="133" height="20"/>
+				<reportElement x="112" y="2" width="194" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font fontName="Lucida Handwriting" size="12" isBold="true"/>
 				</textElement>
@@ -60,31 +68,31 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<textField>
-				<reportElement x="381" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement x="406" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{apellido_asis}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="81" y="0" width="67" height="20"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.Long"><![CDATA[$F{id_grupo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="148" y="0" width="133" height="20"/>
-				<textElement/>
+				<reportElement x="112" y="0" width="194" height="20"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_tema}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="281" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement x="306" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre_asis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="0" width="67" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{cronograma_grupos_id_grupo}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="2" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
