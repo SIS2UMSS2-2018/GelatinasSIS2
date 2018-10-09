@@ -87,7 +87,7 @@ Conexion con;
                 jTextFieldActividadActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 330, -1));
+        getContentPane().add(jTextFieldActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 330, 30));
 
         jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabelNombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,10 +117,10 @@ Conexion con;
         conn=con.getConexion();
         
         Consultas consu=new Consultas(conn);
-        int id=Integer.parseInt(jTextFieldActividad.getText().trim());
-        int nomb=Integer.parseInt(jTextFieldNombre.getText().trim());
-        if(consu.validarAsistente(id)){
-            if (consu.cancelarInscripcion(nomb,id )) {
+        int idGrupo=Integer.parseInt(jTextFieldActividad.getText());
+        int ci=Integer.parseInt(jTextFieldNombre.getText().trim());
+        if(consu.validarAsistente(ci)){
+            if (consu.cancelarInscripcion(ci,idGrupo )) {
             EliminacionExitosa el = new EliminacionExitosa();
             el.setVisible(true);
             jTextFieldNombre.setText("");
