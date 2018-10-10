@@ -55,7 +55,7 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
         jButtonAtras.setBackground(new java.awt.Color(102, 102, 255));
         jButtonAtras.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtras.setText("Atrás");
-        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtrasActionPerformed(evt);
@@ -67,7 +67,7 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
         jButtonRegistrar.setBackground(new java.awt.Color(102, 102, 255));
         jButtonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRegistrar.setText("Registrar Expositor");
-        jButtonRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, -1, -1));
 
         jLabelNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -104,7 +104,7 @@ public class RegistroDeExpositores extends javax.swing.JFrame {
         jLabel2.setText("Informacion del expositor");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 330, 50));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
 
         pack();

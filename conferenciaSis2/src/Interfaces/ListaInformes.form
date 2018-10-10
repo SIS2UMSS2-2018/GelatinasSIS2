@@ -314,8 +314,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelFondo">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.ImageIcon(&quot;src/ImagenesInterfaces/FondoAzul.jpg&quot;)" type="code"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/ImagenesInterfaces/FondoAzul.jpg"/>
         </Property>
       </Properties>
       <Constraints>

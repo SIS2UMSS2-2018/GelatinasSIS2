@@ -47,7 +47,7 @@ public class NumeroInscritos extends javax.swing.JFrame {
         jButronObtener.setBackground(new java.awt.Color(153, 153, 255));
         jButronObtener.setForeground(new java.awt.Color(255, 255, 255));
         jButronObtener.setText("Obtener");
-        jButronObtener.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButronObtener.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jButronObtener, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -64,7 +64,7 @@ public class NumeroInscritos extends javax.swing.JFrame {
         jButronAtras1.setBackground(new java.awt.Color(153, 153, 255));
         jButronAtras1.setForeground(new java.awt.Color(255, 255, 255));
         jButronAtras1.setText("Atrás");
-        jButronAtras1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButronAtras1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButronAtras1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButronAtras1ActionPerformed(evt);
@@ -72,7 +72,7 @@ public class NumeroInscritos extends javax.swing.JFrame {
         });
         getContentPane().add(jButronAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 30, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 275));
 
         pack();

@@ -48,7 +48,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setText("Volver");
-        jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVolverActionPerformed(evt);
@@ -60,7 +60,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         jButtonCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar.setText("Cancelar Inscripción");
-        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -72,7 +72,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         jButtonCancelar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonCancelar1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCancelar1.setText("Inscribir Asistente");
-        jButtonCancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCancelar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelar1ActionPerformed(evt);
@@ -81,9 +81,9 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         getContentPane().add(jButtonCancelar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jLabelTriste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTriste.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/CaraTriste1.png"));
+        jLabelTriste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/CaraTriste1.png"))); // NOI18N
         jLabelTriste.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabelTriste.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelTriste.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelTriste.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelTristeMouseMoved(evt);
@@ -100,9 +100,9 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         getContentPane().add(jLabelTriste, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 180, 210));
 
         jLabelFeliz.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelFeliz.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Muchos.png"));
+        jLabelFeliz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Muchos.png"))); // NOI18N
         jLabelFeliz.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabelFeliz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelFeliz.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelFeliz.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelFelizMouseMoved(evt);
@@ -118,7 +118,7 @@ public class InscripcionYCancelacion extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelFeliz, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 190, 210));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 275));
 
         pack();

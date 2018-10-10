@@ -98,8 +98,7 @@ public class InformacionGrupos extends javax.swing.JFrame {
         getContentPane().add(jLabelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 70, -1));
 
         jLabelImagen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelImagen.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Lentes.png")
-        );
+        jLabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabelImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 0, 720, 280));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));

@@ -116,7 +116,7 @@ Consultas co;
         jLabelActividad.setText("ACTIVIDAD:");
         getContentPane().add(jLabelActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, -1, -1));
 
-        jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/Estudiante.png"));
+        jLabelImagenEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/Estudiante.png"))); // NOI18N
         getContentPane().add(jLabelImagenEstudiante, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 20, 460, 480));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -143,7 +143,7 @@ Consultas co;
         jLabelRegistro.setText("REGISTRO ASISTENTES");
         getContentPane().add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         jLabelFondo.setMaximumSize(new java.awt.Dimension(800, 600));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 1, -1, -1));
 
@@ -175,6 +175,7 @@ Consultas co;
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION");
                 }
             }else if(co.insertarAsistente(ci, nombre,apellido,ocupacion, correo,idGrupo)){
+                c.enviarCorreo(correo);
                 JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS");
             }else{
                     JOptionPane.showMessageDialog(null, "ERROR EN LA INSCRIPCION2");

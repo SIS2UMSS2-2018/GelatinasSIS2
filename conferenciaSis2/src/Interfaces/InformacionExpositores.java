@@ -90,7 +90,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
         getContentPane().add(jComboBoxNombresExpositores, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 210, 36));
 
         botonObtenerInformacion.setText("Info. Contacto");
-        botonObtenerInformacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonObtenerInformacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonObtenerInformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonObtenerInformacionActionPerformed(evt);
@@ -101,7 +101,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Atrás");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -109,7 +109,7 @@ public class InformacionExpositores extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         jLabelFondo.setText("jLabel1");
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 400, 290));
 

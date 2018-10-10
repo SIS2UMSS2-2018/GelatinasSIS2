@@ -28,9 +28,6 @@ public class Historial extends javax.swing.JFrame {
      */
     
     DefaultTableModel model_expo;
-Connection conn;
-Statement sent=null;
-Conexion con;
 Consultas  co;
     public Historial(Consultas co) {
         this.co =co;
@@ -70,7 +67,7 @@ Consultas  co;
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setText("Salir");
-        jButtonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalirActionPerformed(evt);
@@ -97,7 +94,7 @@ Consultas  co;
                 return canEdit [columnIndex];
             }
         });
-        tabla_expo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tabla_expo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane2.setViewportView(tabla_expo);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 480, 260));
@@ -105,7 +102,7 @@ Consultas  co;
         jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Imprimir");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -113,7 +110,7 @@ Consultas  co;
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon("src/ImagenesInterfaces/FondoAzul.jpg"));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesInterfaces/FondoAzul.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 740, 420));
 
         pack();
@@ -175,8 +172,6 @@ Consultas  co;
 
 
  public void llenarTablaExposi(){
-   
-     if(con.isConectado()){
          System.out.println("conexion exitosa");
              try {
             
@@ -203,12 +198,6 @@ Consultas  co;
         catch (Exception e) {
             e.printStackTrace();
         }
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "Error de conexion ");
-        }
-     
-    
-    }
-
+          
+ }
 }
